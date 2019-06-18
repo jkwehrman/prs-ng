@@ -11,6 +11,7 @@ import { JsonResponse } from 'src/app/model/json-response.class';
 export class UserListComponent implements OnInit {
   jr: JsonResponse;
   users: User[];
+  title:string; 
 
   constructor(private userSvc: UserService) { }
 
@@ -18,10 +19,15 @@ export class UserListComponent implements OnInit {
     this.userSvc.list().subscribe(
       jresp => {
         this.jr = jresp;
+        if (this.jr.errors==null) {
         this.users = this.jr.data as User[];
         console.log(this.users);
       }
+      else {
+        //There is a problem.  Implement error handling
+        console.log("Error getting users");
+      }
+    }
     )
   }
-
 }

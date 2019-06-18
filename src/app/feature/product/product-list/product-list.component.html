@@ -1,0 +1,32 @@
+<!-- <app-menu></app-menu>
+<div class='component-content'>
+<div class= 'lefthalf'>
+<span class ='component-title'>[{{title}}]</span>
+<span><a>
+  <img id='createnew' width='20' height='20' src='../../../../assets/add-icon.png' title='Add New'></a>
+</span>
+</div>
+</div>
+<p *ngIf='!product'>Loading ...</p>
+<table class="table table-sm" *ngIf='products'>
+
+  <tr>
+  <th class="table-secondary btn-link"><a class="btn btn-link font-weight-bold" ><u>Id</u></a></th>
+  <th class="table-secondary btn-link"><a class="btn btn-link font-weight-bold" ><u>partNumber</u></a></th>
+  <th class="table-secondary btn-link"><a class="btn btn-link font-weight-bold" ><u>name</u></a></th>
+  <th class="table-secondary btn-link"><a class="btn btn-link font-weight-bold" ><u>price</u></a></th>
+  <th class="table-secondary btn-link"><a class="btn btn-link font-weight-bold" ><u>unit</u></a></th>
+  <th class="table-secondary btn-link"><a class="btn btn-link font-weight-bold" ><u>photopath</u></a></th>
+  <th class="table-secondary btn-link">Privilege</th>
+  <th class="table-secondary btn-link">Action</th>
+</tr>
+<tr *ngFor='let product of products'>
+  <td>{{product.id}}</td>
+  <td>{{product.partNumber}}</td>
+  <td>{{product.name}}</td>
+  <td>{{product.price}}</td>
+  <td>{{product.unit}}</td>
+  <td>{{product.photopath}}</td>
+  <td><a routerLink="/product/detail/{{product.id}}">Detail</a> | <a routerLink="/product/edit/{{product.id}}">Edit</a></td>
+</tr>
+</table> -->
