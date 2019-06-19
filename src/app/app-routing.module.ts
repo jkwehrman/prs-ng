@@ -19,10 +19,6 @@ import { UserDetailComponent } from './feature/user/user-detail/user-detail.comp
 import { VendorDetailComponent } from './feature/vendor/vendor-detail/vendor-detail.component';
 import { ProductDetailComponent } from './feature/product/product-detail/product-detail.component';
 
- //import { UserRemoveComponent } from './feature/user/user-remove/user-remove.component';
- //import { VendorRemoveComponent } from './feature/vendor/vendor-remove/vendor-remove.component';
-//import { ProductRemoveComponent } from './feature/product/product-remove/product-remove.component';
-
 
 
 

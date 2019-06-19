@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Vendor } from './../../../../app/model/vendor.class';
 import { VendorService } from './../../../../app/service/vendor.service';
 import { JsonResponse } from './../../../../app/model/json-response.class';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-vendor-create',
@@ -10,24 +11,26 @@ import { JsonResponse } from './../../../../app/model/json-response.class';
 })
 export class VendorCreateComponent implements OnInit {
     jr: JsonResponse;
-    vendors: Vendor[];
+    vendor: Vendor = new Vendor();
     title:string; 
-  
-    constructor(private vendorSvc: VendorService) { }
+
+    create() {
+      this.vendorSvc.create(this.vendor)
+      .subscribe(
+        jresp => {
+          this.jr=jresp;
+          //assume a good call, fwd to User-List
+        this.router.navigate(['/vendor/list']);
+        });
+        }
+
+    constructor(
+      private vendorSvc: VendorService,
+      private router: Router
+      ) { }
+    
   
     ngOnInit() {
-      this.vendorSvc.list().subscribe(
-        jresp => {
-          this.jr = jresp;
-          if (this.jr.errors==null) {
-          this.vendors = this.jr.data as Vendor[];
-          console.log(this.vendors);
-        }
-        else {
-          //There is a problem.  Implement error handling
-          console.log("Error getting vendors");
-        }
-      }
-      )
     }
+
   }

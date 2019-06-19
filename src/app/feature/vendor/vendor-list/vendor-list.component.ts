@@ -11,7 +11,7 @@ import { JsonResponse } from '../../../../app/model/json-response.class';
 export class VendorListComponent implements OnInit {
   jr: JsonResponse;
   vendors: Vendor[];
-  title:string; 
+  title:string= "Vendor-List"; 
 
   constructor(private vendorSvc: VendorService) { }
 

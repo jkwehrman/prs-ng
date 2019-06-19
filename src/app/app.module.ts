@@ -21,6 +21,11 @@ import { ProductListComponent } from './feature/product/product-list/product-lis
 
 import { ProductEditComponent } from './feature/product/product-edit/product-edit.component';
 import { ProductDetailComponent } from './feature/product/product-detail/product-detail.component';
+import { PrListComponent } from './feature/pr/pr-list/pr-list.component';
+import { PrEditComponent } from './feature/pr/pr-edit/pr-edit.component';
+import { PrDetailComponent } from './feature/pr/pr-detail/pr-detail.component';
+import { PrCreateComponent } from './feature/pr/pr-create/pr-create.component';
+import { SortPipe } from './pipe/sort.pipe';
 
 @NgModule({
   declarations: [
@@ -28,6 +33,7 @@ import { ProductDetailComponent } from './feature/product/product-detail/product
     UserListComponent,
     MenuComponent,
     AboutComponent,
+    SortPipe,
     UserCreateComponent,
     UserEditComponent,
     UserDetailComponent,
@@ -39,7 +45,15 @@ import { ProductDetailComponent } from './feature/product/product-detail/product
     ProductEditComponent,
     ProductListComponent,
 
-    ProductDetailComponent
+    ProductDetailComponent,
+
+    PrListComponent,
+
+    PrEditComponent,
+
+    PrDetailComponent,
+
+    PrCreateComponent
   ],
   imports: [
     BrowserModule,

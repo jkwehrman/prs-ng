@@ -1,11 +1,10 @@
 <app-menu></app-menu>
 <div id='component'>
   <div id = "pagetitle">
-  <span>[{{title}}]</span>
+  <span>{{title}}</span>
   
   </div>
-  <p *ngIf='!vendor'>Loading...</p>
-  <div *ngIf='vendor'>
+  <div>
 
         <div class="form-group row">
       <label class='col-form-label col-sm-2' for="id">id:</label>
@@ -58,7 +57,7 @@
             
     <div class="form-group row">
         <label class='col-form-label col-sm-2' for="preApproved">PreApproved:</label>
-        <input [(ngModel)]='vendor.preApproved' name = 'preApproved' type="text" class="form-control col-sm-6" 
+        <input [(ngModel)]='vendor.preApproved' name = 'preApproved' type="checkbox" class="form-control col-sm-6" 
         id="vendorPreApproved" aria-describedby="preApprovedHelp" placeholder="preApproved">
         <small id="preApprovedHelp" class="form-text text-muted col-sm-2">PreApproved</small>
       </div>

@@ -11,7 +11,9 @@ import { JsonResponse } from '../../../../app/model/json-response.class';
 export class ProductListComponent implements OnInit {
   jr: JsonResponse;
   products: Product[];
-  title:string; 
+  title:string = "Product-List"; 
+  sortCriteria: string = "id";
+  sortOrder: string = "asc";
 
   constructor(private productSvc: ProductService) { }
 
@@ -19,14 +21,20 @@ export class ProductListComponent implements OnInit {
     this.productSvc.list().subscribe(
       jresp => {
         this.jr = jresp;
-        if (this.jr.errors==null) {
         this.products = this.jr.data as Product[];
-        console.log(this.products);
       }
-      else {
-        console.log("Error getting products");
+    );
+
       }
+    
+      sortBy(column: string): void {
+        if(this.sortCriteria === column) {
+          this.sortOrder = this.sortOrder === 'asc' ? 'desc' : 'asc';
+        } else {
+          this.sortCriteria = column;
+          this.sortOrder = 'asc';
+        }
+      }
+    
+
     }
-    )
-  }
-}

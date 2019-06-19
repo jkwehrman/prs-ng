@@ -11,7 +11,7 @@ import { JsonResponse } from './../../../../app/model/json-response.class';
 export class UserListComponent implements OnInit {
   jr: JsonResponse;
   users: User[];
-  title:string; 
+  title:string = "User-List"; 
 
   constructor(private userSvc: UserService) { }
 

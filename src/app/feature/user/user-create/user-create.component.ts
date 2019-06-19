@@ -10,25 +10,28 @@ import { Router } from '@angular/router';
  styleUrls: ['./user-create.component.css']
 })
 export class UserCreateComponent implements OnInit {
-
  title: string = "User-Create";
  jr: JsonResponse;
  user: User = new User();
 
- constructor(private userSVc: UserService,
-private router: Router) { }
+ create() {
+  this.userSVc.create(this.user)
+  .subscribe(
+    jresp => {
+      this.jr=jresp;
+      //assume a good call, fwd to User-List
+    this.router.navigate(['/user/list']);
+    });
+    }
+
+ constructor(
+   private userSVc: UserService, 
+   private router: Router
+  ) { }
 
  ngOnInit() {
  }
-create() {
-this.userSVc.create(this.user)
-.subscribe(
-  jresp => {
-    this.jr=jresp;
-    //assume a good call, fwd to User-List
-  this.router.navigate(['/user/list']);
-  });
-  }
+
 }
 
 

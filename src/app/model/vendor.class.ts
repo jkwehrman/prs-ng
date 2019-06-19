@@ -12,8 +12,8 @@ export class Vendor {
 
     constructor(id:number = 0, code: string = '', name: string = '',
                 address: string = '', city: string = '',
-                state: string = '', zip: number = 0,
-                phoneNumber: number = 0,
+                state: string = '', zip: string = "",
+                phoneNumber: string = "",
                 email: string = "", preapproved: boolean = false) {
 
     }
