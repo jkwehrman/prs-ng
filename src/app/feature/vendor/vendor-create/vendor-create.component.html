@@ -1,0 +1,74 @@
+<app-menu></app-menu>
+<div id='component'>
+  <div id = "pagetitle">
+  <span>[{{title}}]</span>
+  
+  </div>
+  <p *ngIf='!vendor'>Loading...</p>
+  <div *ngIf='vendor'>
+
+        <div class="form-group row">
+      <label class='col-form-label col-sm-2' for="id">id:</label>
+      <input [(ngModel)]='vendor.id' name = 'id' type="text" class="form-control col-sm-6" 
+      id="id" aria-describedby="idHelp" placeholder="Id">
+      <small id="idHelp" class="form-text text-muted col-sm-2">Id</small>
+    </div>
+    
+    <div class="form-group row">
+        <label class='col-form-label col-sm-2' for="code">code:</label>
+        <input [(ngModel)]='vendor.code' name = 'vendorcode' type="text" class="form-control col-sm-6" 
+        id="code" aria-describedby="codeHelp" placeholder="Code">
+        <small id="codeHelp" class="form-text text-muted col-sm-2">Code</small>
+      </div>
+          
+    <div class="form-group row">
+        <label class='col-form-label col-sm-2' for="name">name:</label>
+        <input [(ngModel)]='vendor.name' name = 'name' type="text" class="form-control col-sm-6" 
+        id="vendorname" aria-describedby="nameHelp" placeholder="Name">
+        <small id="nameHelp" class="form-text text-muted col-sm-2">Name</small>
+      </div>
+                
+    <div class="form-group row">
+        <label class='col-form-label col-sm-2' for="address">address:</label>
+        <input [(ngModel)]='vendor.address' name = 'address' type="text" class="form-control col-sm-6" 
+        id="vendoraddress" aria-describedby="addressHelp" placeholder="address">
+        <small id="addressHelp" class="form-text text-muted col-sm-2">Address</small>
+      </div>
+               
+      <div class="form-group row">
+          <label class='col-form-label col-sm-2' for="address">address:</label>
+          <input [(ngModel)]='vendor.address' name = 'address' type="text" class="form-control col-sm-6" 
+          id="vendoraddress" aria-describedby="addressHelp" placeholder="address">
+          <small id="addressHelp" class="form-text text-muted col-sm-2">Address</small>
+        </div>
+
+    <div class="form-group row">
+        <label class='col-form-label col-sm-2' for="phone">phone:</label>
+        <input [(ngModel)]='vendor.phone' name = 'phone' type="text" class="form-control col-sm-6" 
+        id="vendorphone" aria-describedby="phoneHelp" placeholder="phone">
+        <small id="phoneHelp" class="form-text text-muted col-sm-2">Phone</small>
+      </div>
+      
+    <div class="form-group row">
+        <label class='col-form-label col-sm-2' for="email">email:</label>
+        <input [(ngModel)]='vendor.email' name = 'phone' type="text" class="form-control col-sm-6" 
+        id="vendoremail" aria-describedby="emailHelp" placeholder="email">
+        <small id="emailHelp" class="form-text text-muted col-sm-2">Email</small>
+      </div>
+            
+    <div class="form-group row">
+        <label class='col-form-label col-sm-2' for="preApproved">PreApproved:</label>
+        <input [(ngModel)]='vendor.preApproved' name = 'preApproved' type="text" class="form-control col-sm-6" 
+        id="vendorPreApproved" aria-describedby="preApprovedHelp" placeholder="preApproved">
+        <small id="preApprovedHelp" class="form-text text-muted col-sm-2">PreApproved</small>
+      </div>
+      <div class='form-group'>
+        <button (click)='create()' class='btn btn-primary'>Create</button>
+        
+      </div>
+    </div>
+  </div>
+  
+  
+
+      
