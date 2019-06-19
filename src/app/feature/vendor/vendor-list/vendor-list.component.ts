@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Vendor } from '../../../model/vendor.class';
-import { VendorService } from 'src/app/service/vendor.service';
-import { JsonResponse } from 'src/app/model/json-response.class';
+import { VendorService } from '../../../../app/service/vendor.service';
+import { JsonResponse } from '../../../../app/model/json-response.class';
 
 @Component({
   selector: 'app-vendor-list',

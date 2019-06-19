@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from 'src/app/model/user.class';
-import { UserService } from 'src/app/service/user.service';
-import { JsonResponse } from 'src/app/model/json-response.class';
+import { User } from './../../../../app/model/user.class';
+import { UserService } from './../../../../app/service/user.service';
+import { JsonResponse } from './../../../../app/model/json-response.class';
 
 @Component({
   selector: 'app-user-list',

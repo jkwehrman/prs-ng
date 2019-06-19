@@ -2,7 +2,7 @@
 <div class='component-content'>
 <div class= 'lefthalf'>
 <span class ='component-title'>[{{title}}]</span>
-<span><a>
+<span><a routerLink='/user/create'>
   <img id='createnew' width='20' height='20' src='../../../../assets/add-icon.png' title='Add New'></a>
 </span>
 </div>
@@ -27,5 +27,10 @@
   <td>{{user.email}}</td>
   <td>{{user.reviewer?"Rvw":""}} {{user.admin?"Adm":""}}</td>
   <td><a routerLink="/user/detail/{{user.id}}">Detail</a> | <a routerLink="/user/edit/{{user.id}}">Edit</a></td>
+  <td class='actions'>
+    <a routerLink='/user/detail/{{user.id}}'><img src='assets/details.png' width='20' height='20' title='Detail'></a>
+    <a routerLink='/user/edit/{{user.id}}'><img src='./../../../../assets/pencil-icon.png' width='20' height='20' title='Edit'></a>
+  </td>
 </tr>
 </table>
+
