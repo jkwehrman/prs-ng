@@ -8,7 +8,8 @@ import { PR } from '../model/pr.class';
   providedIn: 'root'
 })
 export class PrService {
-  url: string = "http://localhost:8080/pr/";
+  url: string = "http://localhost:8080/purchase-requests/";
+  
 
   constructor(private http: HttpClient) { }
 

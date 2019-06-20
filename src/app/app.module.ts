@@ -23,7 +23,7 @@ import { ProductEditComponent } from './feature/product/product-edit/product-edi
 import { ProductDetailComponent } from './feature/product/product-detail/product-detail.component';
 import { PRListComponent } from './feature/pr/pr-list/pr-list.component';
 import { PrEditComponent } from './feature/pr/pr-edit/pr-edit.component';
-import { PrDetailComponent } from './feature/pr/pr-detail/pr-detail.component';
+import { PRDetailComponent } from './feature/pr/pr-detail/pr-detail.component';
 import { PrCreateComponent } from './feature/pr/pr-create/pr-create.component';
 import { SortPipe } from './pipe/sort.pipe';
 //import { PrComponent } from './model/pr/pr.component';
@@ -52,7 +52,7 @@ import { SortPipe } from './pipe/sort.pipe';
 
     PrEditComponent,
 
-    PrDetailComponent,
+    PRDetailComponent,
 
     PrCreateComponent,
 

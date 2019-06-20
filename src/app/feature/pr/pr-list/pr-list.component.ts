@@ -3,6 +3,7 @@ import { PR } from '../../../../app/model/pr.class';
 import { PrService } from '../../../service/pr.service';
 import { JsonResponse } from '../../../../app/model/json-response.class';
 
+
 @Component({
   selector: 'app-pr-list',
   templateUrl: './pr-list.component.html',
@@ -10,7 +11,7 @@ import { JsonResponse } from '../../../../app/model/json-response.class';
 })
 export class PRListComponent implements OnInit {
   jr: JsonResponse;
-  pr: PR[];
+  prs: PR[];
   title:string = "PR-List"; 
   // sortCriteria: string = "id";
   // sortOrder: string = "asc";
@@ -21,7 +22,7 @@ export class PRListComponent implements OnInit {
     this.prSvc.list().subscribe(
       jresp => {
         this.jr = jresp;
-        this.pr = this.jr.data as PR[];
+        this.prs = this.jr.data as PR[];
       }
     );
 

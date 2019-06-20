@@ -16,6 +16,7 @@ console.log(1);
 
   <tr>
   <th class="table-secondary btn-link"><a class="btn btn-link font-weight-bold" ><u>Id</u></a></th>
+  <th class="table-secondary">User Name</th>
   <th class="table-secondary btn-link"><a class="btn btn-link font-weight-bold" ><u>Description</u></a></th>
   <th class="table-secondary btn-link"><a class="btn btn-link font-weight-bold" ><u>justification</u></a></th>
   <th class="table-secondary btn-link"><a class="btn btn-link font-weight-bold" ><u>date Needed</u></a></th>
@@ -26,9 +27,11 @@ console.log(1);
   <th class="table-secondary btn-link"><a class="btn btn-link font-weight-bold" ><u>Reason For Rejection</u></a></th>
 </tr>
 
-
 <tr *ngFor='let pr of prs'>
+    <!-- <tr *ngFor='let product of products | sort:sortCriteria:sortOrder'> -->
+
   <td>{{pr.id}}</td>
+  <td>{{pr.user.name}}</td>
   <td>{{pr.description}}</td>
   <td>{{pr.justification}}</td>
   <td>{{pr.dateNeeded}}</td>
