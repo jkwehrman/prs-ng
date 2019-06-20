@@ -9,6 +9,7 @@ import { Router, ActivatedRoute } from '@angular/router';
   templateUrl: './product-detail.component.html',
   styleUrls: ['./product-detail.component.css']
 })
+
 export class ProductDetailComponent implements OnInit {
   title: string = "Product Detail";
   productIdStr: string;
@@ -28,15 +29,21 @@ export class ProductDetailComponent implements OnInit {
         this.product = this.jr.data as Product;
       });
     }
+
+
+
   
     remove() {
         this.productSvc.remove(this.product).subscribe(
           jresp => {
             this.jr = jresp;
             this.product = this.jr.data as Product;
-            this.router.navigate(['/product/list']);
+            this.router.navigate(['/product/product-list']);
           }
       );
     }
   
   }
+
+  
+

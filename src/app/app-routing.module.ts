@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { UserListComponent } from './feature/user/user-list/user-list.component';
 import { VendorListComponent } from './feature/vendor/vendor-list/vendor-list.component';
 import { ProductListComponent } from './feature/product/product-list/product-list.component';
+import { PRListComponent } from './feature/pr/pr-list/pr-list.component';
 
 import { AboutComponent } from './core/about/about.component';
 
@@ -43,6 +44,13 @@ const routes: Routes = [
   {path:'product/edit/:id', component: ProductEditComponent},
   {path:'product/detail/:id', component: ProductDetailComponent},
   {path:'product/remove/:id', component: ProductDetailComponent},
+
+  {path:'pr/list', component: PRListComponent},
+  // {path:'pr/create', component: PRCreateComponent},
+  // {path:'pr/edit/:id', component: PREditComponent},
+  // {path:'pr/detail/:id', component: PRDetailComponent},
+  // {path:'pr/remove/:id', component: PRDetailComponent},
+
   
   
   {path:'about', component: AboutComponent},
