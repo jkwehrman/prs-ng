@@ -9,9 +9,9 @@ import { Router, ActivatedRoute } from '@angular/router';
   templateUrl: './pr-detail.component.html',
   styleUrls: ['./pr-detail.component.css']
 })
-export class PRDetailComponent implements OnInit {
+export class PrDetailComponent implements OnInit {
   title: string = "User Detail";
-  prIdStr: string;
+  prIdStr: string = "";
   jr: JsonResponse;
   pr: PR;
 

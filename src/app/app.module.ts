@@ -23,9 +23,10 @@ import { ProductEditComponent } from './feature/product/product-edit/product-edi
 import { ProductDetailComponent } from './feature/product/product-detail/product-detail.component';
 import { PRListComponent } from './feature/pr/pr-list/pr-list.component';
 import { PrEditComponent } from './feature/pr/pr-edit/pr-edit.component';
-import { PRDetailComponent } from './feature/pr/pr-detail/pr-detail.component';
+import { PrDetailComponent } from './feature/pr/pr-detail/pr-detail.component';
 import { PrCreateComponent } from './feature/pr/pr-create/pr-create.component';
 import { SortPipe } from './pipe/sort.pipe';
+import { UserLoginComponent } from './feature/user/user-login/user-login.component';
 //import { PrComponent } from './model/pr/pr.component';
 
 @NgModule({
@@ -52,9 +53,11 @@ import { SortPipe } from './pipe/sort.pipe';
 
     PrEditComponent,
 
-    PRDetailComponent,
+    PrDetailComponent,
 
     PrCreateComponent,
+
+    UserLoginComponent,
 
     //PrComponent
   ],

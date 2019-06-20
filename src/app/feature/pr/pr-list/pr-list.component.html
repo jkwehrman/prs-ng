@@ -10,9 +10,9 @@
 </div>
 </div>
 <p *ngIf='!prs'>Loading ...</p>
-console.log(1);
+
 <table class="table table-sm" *ngIf='prs'>
-    console.log(2);
+
 
   <tr>
   <th class="table-secondary btn-link"><a class="btn btn-link font-weight-bold" ><u>Id</u></a></th>
@@ -31,7 +31,10 @@ console.log(1);
     <!-- <tr *ngFor='let product of products | sort:sortCriteria:sortOrder'> -->
 
   <td>{{pr.id}}</td>
-  <td>{{pr.user.name}}</td>
+  <td>{{pr.user.userName}}</td>
+
+  <!-- <td>{{pr.user.username}}</td> -->
+  <!-- <td>{{product.vendor.name}}</td> -->
   <td>{{pr.description}}</td>
   <td>{{pr.justification}}</td>
   <td>{{pr.dateNeeded}}</td>
@@ -40,7 +43,6 @@ console.log(1);
   <td>{{pr.total}}</td>
   <td>{{pr.submittedDate}}</td>
   <td>{{pr.reasonForRejection}}</td>
-  console.log(3);
   <td><a routerLink="/pr/detail/{{pr.id}}"></a><a routerLink="/pr/edit/{{pr.id}}"></a></td>
   <td class='actions'>
     <a routerLink='/pr/detail/{{pr.id}}'><img src='assets/details.png' width='20' height='20' title='Detail'></a>
