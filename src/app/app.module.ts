@@ -27,6 +27,10 @@ import { PrDetailComponent } from './feature/pr/pr-detail/pr-detail.component';
 import { PrCreateComponent } from './feature/pr/pr-create/pr-create.component';
 import { SortPipe } from './pipe/sort.pipe';
 import { UserLoginComponent } from './feature/user/user-login/user-login.component';
+import { PrRequestLinesComponent } from './feature/pr/pr-request-lines/pr-request-lines.component';
+import { PrRequestReviewComponent } from './feature/pr/pr-request-review/pr-request-review.component';
+import { PrRequestApproveComponent } from './feature/pr/pr-request-approve/pr-request-approve.component';
+// import { PrliComponent } from './model/prli.class';
 //import { PrComponent } from './model/pr/pr.component';
 
 @NgModule({
@@ -58,6 +62,13 @@ import { UserLoginComponent } from './feature/user/user-login/user-login.compone
     PrCreateComponent,
 
     UserLoginComponent,
+
+    PrRequestLinesComponent,
+
+    PrRequestReviewComponent,
+
+    PrRequestApproveComponent
+
 
     //PrComponent
   ],

@@ -6,7 +6,7 @@ export class Vendor {
     city: string;
     state: string;
     zip: number;
-    phoneNumber: number;
+    phoneNumber: string;
     email: string;
     preapproved: boolean;
 

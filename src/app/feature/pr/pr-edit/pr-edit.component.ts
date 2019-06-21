@@ -24,6 +24,7 @@ export class PrEditComponent implements OnInit {
       this.route.params.subscribe(params => 
               this.prIdStr = params['id']);
       this.prSvc.get(this.prIdStr).subscribe(jresp => {
+        console.log(jresp);
         this.jr = jresp;
         this.pr = this.jr.data as PR;
       });

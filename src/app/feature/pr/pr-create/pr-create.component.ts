@@ -3,10 +3,7 @@ import { JsonResponse } from '../../../model/json-response.class';
 import { PR } from '../../../model/pr.class';
 import { PrService } from '../../../service/pr.service';
 import { Router } from '@angular/router';
-import { User } from '../../../model/user.class';
 import { SystemService } from '../../../service/system.service';
-import { create } from 'domain';
-import { UserService } from '../../../service/user.service';
 
 @Component({
   selector: 'app-pr-create',
@@ -19,7 +16,7 @@ export class PrCreateComponent implements OnInit {
     title: string = "PR-Create";
     jr: JsonResponse;
     
-    pr: PR = new PR();
+    purchaseRequest: PR = new PR();
     // authenticatedUser: User;
 
         constructor(
@@ -29,18 +26,19 @@ export class PrCreateComponent implements OnInit {
          ) { }
          
   ngOnInit() {
-    // if (this.sysSvc.data.user.loggedIn) {
-    //   this.pr.user = this.sysSvc.data.user.instance;
-    //  } else {
-    //     console.error("User not logged in.")
-    //   }
+    if (this.sysSvc.data.user.loggedIn) {
+      this.purchaseRequest.user = this.sysSvc.data.user.instance;
+     } else {
+        console.error("User not logged in.")
+      }
     }
     
     create() {
-      this.prSvc.create(this.pr)
+      this.prSvc.create(this.purchaseRequest)
       .subscribe(
         jresp => {
           this.jr=jresp;
+          console.log(jresp);
           //assume a good call, fwd to User-List
         this.router.navigate(['/pr/list']);
         });
