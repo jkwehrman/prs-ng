@@ -10,7 +10,7 @@
       <div class="form-group row">
           <label class='col-form-label col-sm-2' for="id">id:</label>
           <input [(ngModel)]='vendor.id' name = 'id' type="text" class="form-control col-sm-6" 
-          id="id" aria-describedby="idHelp" placeholder="Id">
+          id="id" aria-describedby="idHelp" placeholder="Id" readonly>
           <small id="idHelp" class="form-text text-muted col-sm-2">Id</small>
         </div>
         
@@ -29,11 +29,21 @@
           </div>
                     
         <div class="form-group row">
-            <label class='col-form-label col-sm-2' for="address">address:</label>
+            <label class='col-form-label col-sm-2' for="address">street address:</label>
             <input [(ngModel)]='vendor.address' name = 'address' type="text" class="form-control col-sm-6" 
             id="vendoraddress" aria-describedby="addressHelp" placeholder="address">
             <small id="addressHelp" class="form-text text-muted col-sm-2">Address</small>
           </div>
+
+          <div class="form-group row">
+              <label class='col-form-label col-sm-2' for="city">city:</label>
+              <input [(ngModel)]='vendor.city' name = 'city' type="text" class="form-control col-sm-6" 
+              id="vendorcity" aria-describedby="cityHelp" placeholder="city">
+              <small id="cityHelp" class="form-text text-muted col-sm-2">City</small>
+            </div>
+
+
+
                    
           <div class="form-group row">
               <label class='col-form-label col-sm-2' for="address">address:</label>
@@ -44,7 +54,7 @@
     
         <div class="form-group row">
             <label class='col-form-label col-sm-2' for="phone">phone:</label>
-            <input [(ngModel)]='vendor.phone' name = 'phone' type="text" class="form-control col-sm-6" 
+            <input [(ngModel)]='vendor.phoneNumber' name = 'phone' type="text" class="form-control col-sm-6" 
             id="vendorphone" aria-describedby="phoneHelp" placeholder="phone">
             <small id="phoneHelp" class="form-text text-muted col-sm-2">Phone</small>
           </div>
