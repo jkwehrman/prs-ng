@@ -21,7 +21,6 @@ export class ProductDetailComponent implements OnInit {
     private route: ActivatedRoute) { }
 
     ngOnInit() {
-      // get user from db
       this.route.params.subscribe(params => 
         this.productIdStr = params['id']);
         this.productSvc.get(this.productIdStr).subscribe(jresp => {
@@ -30,20 +29,17 @@ export class ProductDetailComponent implements OnInit {
       });
     }
 
-
-
-  
     remove() {
         this.productSvc.remove(this.product).subscribe(
           jresp => {
             this.jr = jresp;
+            console.log("AAAAA");
             this.product = this.jr.data as Product;
-            this.router.navigate(['/product/product-list']);
+            this.router.navigate(['/product/list']);
+
           }
       );
     }
   
   }
-
   
-

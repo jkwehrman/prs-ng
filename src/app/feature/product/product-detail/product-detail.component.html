@@ -17,16 +17,18 @@
         <td>Price</td><td>{{ product.price }}</td>
       </tr>
       <tr>
-        <td>Unit</td><td>{{ product.phoneNumber }}</td>
+        <td>Unit</td><td>{{ product.unit }}</td>
       </tr>
       <tr>
-        <td>Photopath</td><td>{{ product.photopath }}</td>
+        <td>Photo Path</td><td>{{ product.photopath }}</td>
       </tr>
       <tr>
         <td colspan="2">
           <a routerLink='/product/edit/{{product.id}}' class='btn btn-primary' title='Edit'>Edit</a>
-          <button (click)="remove()" class='btn btn-danger' title='Delete'>Remove</button>
+          <button (click)='remove()' class='btn btn-danger' title='Delete'>Delete</button>
         </td>
       </tr>
     </table>
   </div>
+
+

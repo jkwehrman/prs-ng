@@ -6,12 +6,12 @@
   </div>
   <div>
 
-        <div class="form-group row">
+        <!-- <div class="form-group row">
       <label class='col-form-label col-sm-2' for="id">id:</label>
       <input [(ngModel)]='vendor.id' name = 'id' type="text" class="form-control col-sm-6" 
       id="id" aria-describedby="idHelp" placeholder="Id" readonly>
       <small id="idHelp" class="form-text text-muted col-sm-2">Id</small>
-    </div>
+    </div> -->
     
     <div class="form-group row">
         <label class='col-form-label col-sm-2' for="code">code:</label>
@@ -44,7 +44,7 @@
           <div class="form-group row">
               <label class='col-form-label col-sm-2' for="state">state or US Territory:</label>
               <!-- <div class='col-sm-6 select-list' -->
-            <select>	<option value="AL">Alabama</option>
+            <select [(ngModel)]='vendor.state'>	<option value="">Alabama</option>
               <option value="AK">Alaska</option>
               <option value="AS">American Samoa</option>
 
@@ -106,16 +106,9 @@
               <option value="WI">Wisconsin</option>
               <option value="WY">Wyoming</option>
               </select>	
+              <small id="cityHelp" class="form-text text-muted col-sm-2">Choose your state or territory from the dropdown menu</small>
             </div>
-          <!-- </div> -->
 
-
-            <!-- <div class="form-group row">
-                <label class='col-form-label col-sm-2' for="state">state or US Territory:</label>
-                <input [(ngModel)]='vendor.state' name = 'state' type="text" class="form-control col-sm-6" 
-                id="vendorstate" aria-describedby="stateHelp" placeholder="state or US territory">
-                <small id="stateHelp" class="form-text text-muted col-sm-2">State or US Territory</small>
-              </div> -->
 
             <div class="form-group row">
                 <label class='col-form-label col-sm-2' for="zip">zip code:</label>

@@ -22,29 +22,29 @@
     <div class="form-group row">
         <label class='col-form-label col-sm-2' for="partNumber">Part Number:</label>
         <input [(ngModel)]='product.partNumber' name = 'partNumber' type="text" class="form-control col-sm-6" 
-        id="productPartNumber" aria-describedby="partNumberHelp" placeholder="partNumber">
+        id="productPartNumber" aria-describedby="partNumberHelp" placeholder="Part Number">
         <small id="partNumberHelp" class="form-text text-muted col-sm-2">Product Part Number</small>
       </div>
        
       <div class="form-group row">
-          <label class='col-form-label col-sm-2' for="name">Name:</label>
-          <input [(ngModel)]='product.name' name = 'Name' type="text" class="form-control col-sm-6" 
-          id="productname" aria-describedby="nameHelp" placeholder="Name">
+          <label class='col-form-label col-sm-2' for="name">Product Name:</label>
+          <input [(ngModel)]='product.name' name = 'Product Name' type="text" class="form-control col-sm-6" 
+          id="productname" aria-describedby="nameHelp" placeholder="Product Name">
           <small id="nameHelp" class="form-text text-muted col-sm-2">Product Name</small>
         </div>
        
         <div class="form-group row">
             <label class='col-form-label col-sm-2' for="productprice">Price:</label>
             <input [(ngModel)]='product.price' name = 'price' type="text" class="form-control col-sm-6" 
-            id="productprice" aria-describedby="priceHelp" placeholder="Name">
-            <small id="priceHelp" class="form-text text-muted col-sm-2">price</small>
+            id="productprice" aria-describedby="priceHelp" placeholder="Price per Item">
+            <small id="priceHelp" class="form-text text-muted col-sm-2">price per item</small>
           </div>
 
       <div class="form-group row">
           <label class='col-form-label col-sm-2' for="productunit">Unit:</label>
           <input [(ngModel)]='product.unit' name = 'unit' type="text" class="form-control col-sm-6" 
-          id="productunit" aria-describedby="unitHelp" placeholder="Unit">
-          <small id="unitHelp" class="form-text text-muted col-sm-2">Unit</small>
+          id="productunit" aria-describedby="unitHelp" placeholder="Unit Description">
+          <small id="unitHelp" class="form-text text-muted col-sm-2">Unit Description</small>
         </div>
               
       <div class="form-group row">

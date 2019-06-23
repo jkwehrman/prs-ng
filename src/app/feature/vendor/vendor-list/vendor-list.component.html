@@ -20,8 +20,8 @@
   <th class="table-secondary btn-link"><a class="btn btn-link font-weight-bold" ><u>phoneNumber</u></a></th>
   <th class="table-secondary btn-link"><a class="btn btn-link font-weight-bold" ><u>email</u></a></th>
   <th class="table-secondary btn-link"><a class="btn btn-link font-weight-bold" ><u>preApproved</u></a></th>
-  <th class="table-secondary btn-link">Privilege</th>
-  <th class="table-secondary btn-link">Action</th>
+  <th class="table-secondary btn-link"><a class="btn btn-link font-weight-bold" ><u>Action</u></a></th>
+
 </tr>
 <tr *ngFor='let vendor of vendors'>
   <td>{{vendor.id}}</td>
@@ -31,7 +31,10 @@
   <td>{{vendor.phoneNumber}}</td>
   <td>{{vendor.email}}</td>
   <td>{{vendor.preApproved}}</td>
-  <td><a routerLink="/vendor/detail/{{vendor.id}}">Detail</a> | <a routerLink="/vendor/edit/{{vendor.id}}">Edit</a></td>
+  <td class='actions'>
+      <a routerLink='/vendor/detail/{{vendor.id}}'><img src='assets/details.png' width='20' height='20' title='Detail'></a>
+      <a routerLink='/vendor/edit/{{vendor.id}}'><img src='./../../../../assets/pencil-icon.png' width='20' height='20' title='Edit'></a>
+    </td>
 </tr>
 </table>
 
