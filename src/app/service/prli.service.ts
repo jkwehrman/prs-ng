@@ -30,10 +30,10 @@ edit(prli: Prli): Observable<JsonResponse> {
 
   remove(prli: Prli): Observable<JsonResponse> {
     return this.http.delete(this.url+prli.id) as Observable<JsonResponse>;
-
-  
 } 
-
+getLines(prid: string): Observable<JsonResponse> {
+  return this.http.get(this.url+"lines-for-pr/"+prid) as Observable<JsonResponse>;
+} 
 
 
 }

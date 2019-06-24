@@ -5,6 +5,9 @@ import { JsonResponse } from '../../../model/json-response.class';
 import { PR } from '../../../model/pr.class';
 import { PrService } from '../../../service/pr.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import { ProductService } from '../../../service/product.service';
+import { Product } from '../../../model/product.class';
+
 
 @Component({
   selector: 'app-pr-request-lines',
@@ -14,23 +17,32 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class PrRequestLinesComponent implements OnInit {
   jr: JsonResponse;
   prrequestlines: Prli[];
-  title:string = "PR-Request-Lines"
-    prIdStr: string;
-    pr: PR;
+  title: string = "PR-Request-Lines"
+  prIdStr: string;
+  pr: PR;
 
 
-  constructor(private prliService: PrliService,
+  constructor(
+    private prliService: PrliService,
     private prService: PrService,
-  private router: Router,
+    private productService: ProductService,
+    private router: Router,
     private route: ActivatedRoute) { }
 
 
-ngOnInit() {
-  this.route.params.subscribe(params => 
-    this.prIdStr = params['id']);
-    this.prService.get(this.prIdStr).subscribe(jresp => {
-    this.jr = jresp;
-    this.pr = this.jr.data as PR;
-  });
-}
+  ngOnInit() {
+    console.log("PRLINES");
+    this.route.params.subscribe(params =>
+      this.prIdStr = params['id']);
+
+    this.prService.get(this.prIdStr).subscribe(jrsep => {
+      this.jr = jrsep;
+      this.pr = this.jr.data as PR
+      this.prliService.getLines(this.prIdStr).subscribe(jresp => {
+        console.log("PRLIS:", jresp);
+        this.jr = jresp;
+        this.prrequestlines = this.jr.data as Prli[];
+      });
+    });
+  }
 }
