@@ -1,3 +1,38 @@
-<p>
-  pr-request-lines works!
-</p>
+<app-menu></app-menu>
+<div class='component-content'>
+<div class= 'lefthalf'>
+<span class ='component-title'>{{title}}</span>
+<span>
+
+    <img id='createnew' width='20' height='20' src='../../../../assets/add-icon.png' title='Add New'>
+    <img id='createnew' width='20' height='20' src='../../../../assets/glass.png'>
+
+
+</span>
+</div>
+</div>
+
+<table class="table table-sm" *ngIf = "pr" >
+  <tr>
+  <th class="table-secondary btn-link"><a class="btn btn-link font-weight-bold" ><u>Description</u></a></th>
+  <th class="table-secondary btn-link"><a class="btn btn-link font-weight-bold" ><u>Status</u></a></th>
+  <th class="table-secondary btn-link"><a class="btn btn-link font-weight-bold" ><u>Total</u></a></th>
+  <th class="table-secondary btn-link"><a class="btn btn-link font-weight-bold" ><u>User</u></a></th>
+
+</tr>
+
+
+
+
+
+  <td>{{pr.description}}</td>
+  <td>{{pr.status}}</td>
+  <td>{{pr.total | currency}}</td>
+  <td>{{pr.user.userName}}</td>
+
+  <!-- <td><a routerLink="/pr/lines/{{pr.id}}"></a></td> -->
+
+  
+
+
+</table>
