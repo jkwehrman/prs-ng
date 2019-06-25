@@ -30,6 +30,8 @@ import { UserLoginComponent } from './feature/user/user-login/user-login.compone
 import { PrRequestLinesComponent } from './feature/pr/pr-request-lines/pr-request-lines.component';
 import { PrRequestReviewComponent } from './feature/pr/pr-request-review/pr-request-review.component';
 import { PrRequestApproveComponent } from './feature/pr/pr-request-approve/pr-request-approve.component';
+import { PrliEditComponent } from './feature/prli/prli-edit/prli-edit.component';
+import { PrliCreateComponent } from './feature/prli/prli-create/prli-create.component';
 // import { PrliComponent } from './model/prli.class';
 //import { PrComponent } from './model/pr/pr.component';
 
@@ -67,7 +69,15 @@ import { PrRequestApproveComponent } from './feature/pr/pr-request-approve/pr-re
 
     PrRequestReviewComponent,
 
-    PrRequestApproveComponent
+    PrRequestApproveComponent,
+
+    PrliEditComponent,
+
+    PrliCreateComponent,
+
+    PrliCreateComponent,
+
+    PrliEditComponent
 
 
     //PrComponent
