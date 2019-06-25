@@ -32,6 +32,7 @@ import { PrRequestLinesComponent } from './feature/pr/pr-request-lines/pr-reques
 
 import { PrliCreateComponent } from './feature/prli/prli-create/prli-create.component';
 import { PrliEditComponent } from './feature/prli/prli-edit/prli-edit.component';
+import { PrliDeleteComponent } from './feature/prli/prli-delete/prli-delete.component';
 
 
 
@@ -70,6 +71,8 @@ const routes: Routes = [
 
   {path:'prli/create/:id', component: PrliCreateComponent},
   {path:'prli/edit/:id', component: PrliEditComponent},
+  {path:'prli/delete/:id', component: PrliDeleteComponent},
+
 
 
 

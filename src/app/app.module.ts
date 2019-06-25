@@ -32,6 +32,7 @@ import { PrRequestReviewComponent } from './feature/pr/pr-request-review/pr-requ
 import { PrRequestApproveComponent } from './feature/pr/pr-request-approve/pr-request-approve.component';
 import { PrliEditComponent } from './feature/prli/prli-edit/prli-edit.component';
 import { PrliCreateComponent } from './feature/prli/prli-create/prli-create.component';
+import { PrliDeleteComponent } from './feature/prli/prli-delete/prli-delete.component';
 // import { PrliComponent } from './model/prli.class';
 //import { PrComponent } from './model/pr/pr.component';
 
@@ -77,7 +78,9 @@ import { PrliCreateComponent } from './feature/prli/prli-create/prli-create.comp
 
     PrliCreateComponent,
 
-    PrliEditComponent
+    PrliEditComponent,
+
+    PrliDeleteComponent
 
 
     //PrComponent

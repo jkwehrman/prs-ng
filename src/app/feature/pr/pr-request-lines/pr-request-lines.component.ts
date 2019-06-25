@@ -9,6 +9,7 @@ import { ProductService } from '../../../service/product.service';
 import { Product } from '../../../model/product.class';
 
 
+
 @Component({
   selector: 'app-pr-request-lines',
   templateUrl: './pr-request-lines.component.html',
@@ -45,4 +46,33 @@ export class PrRequestLinesComponent implements OnInit {
       });
     });
   }
+
+//   delete() {
+//     this.prliService.remove(this.prli).subscribe(jresp => {
+//       jresp => {
+//         this.jr = jresp;
+// console.log(jresp);
+//         // this.pr = this.jr.data as PR;
+//         // this.router.navigate(['/pr/list']);
+//       }
+//   );
+// }
+
+
+  // refresh() {
+  //   console.log("PRLINES");
+  //   this.route.params.subscribe(params =>
+  //     this.prIdStr = params['id']);
+
+  //   this.prService.get(this.prIdStr).subscribe(jrsep => {
+  //     this.jr = jrsep;
+  //     this.pr = this.jr.data as PR
+  //     this.prliService.getLines(this.prIdStr).subscribe(jresp => {
+  //       console.log("PRLIS:", jresp);
+  //       this.jr = jresp;
+  //       this.prrequestlines = this.jr.data as Prli[];
+  //     });
+  //   });
+  // }
 }
+    

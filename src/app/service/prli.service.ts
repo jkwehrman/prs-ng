@@ -28,7 +28,7 @@ edit(prli: Prli): Observable<JsonResponse> {
   return this.http.put(this.url, prli) as Observable<JsonResponse>;
 } 
 
-  remove(prli: Prli): Observable<JsonResponse> {
+remove(prli: Prli): Observable<JsonResponse> {
     return this.http.delete(this.url+prli.id) as Observable<JsonResponse>;
 } 
 getLines(prid: string): Observable<JsonResponse> {
