@@ -5,6 +5,8 @@ import { JsonResponse } from '../../../../app/model/json-response.class';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Product } from '../../../../app/model/product.class';
 import { ProductService } from '../../../service/product.service';
+import { PrService } from '../../../service/pr.service';
+import { PR } from '../../../model/pr.class';
 
 
 
@@ -18,15 +20,24 @@ export class PrliCreateComponent implements OnInit {
     prli: Prli = new Prli();
     title: string;
     products: Product[];
+    prid: number;
+    pr: PR;
 
   constructor(
     private prliSvc: PrliService, 
+    private prSvc: PrService,
     private router: Router,
+    private route: ActivatedRoute,
     private productService: ProductService
   ) { }
 
   ngOnInit(
   ) {
+    this.prid = this.route.snapshot.params.id;
+    this.prSvc.get(this.prid.toString()).subscribe(jresp => {
+      let jsresp = jresp;
+      this.pr = jsresp.data as PR;
+    });
     this.productService.list().subscribe(
       jresp => {
         this.jr=jresp;
@@ -36,14 +47,25 @@ export class PrliCreateComponent implements OnInit {
     }
     
     create() {
+      this.prli.purchaseRequest = this.pr;
+      console.log("PRLI:", this.prli);
       this.prliSvc.create(this.prli)
       .subscribe(
         jresp => {
           this.jr=jresp;
           console.log(jresp);
-          //assume a good call, fwd to User-List
-        this.router.navigate(['/prli/list']);
+        this.router.navigate(['/pr/lines/'+ Number(this.prid)]);
         });
         }
     
       }
+
+      // create() {
+      //   this.userSVc.create(this.user)
+      //   .subscribe(
+      //     jresp => {
+      //       this.jr=jresp;
+      //       //assume a good call, fwd to User-List
+      //     this.router.navigate(['/user/list']);
+      //     });
+      //     }
