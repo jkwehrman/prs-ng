@@ -29,7 +29,7 @@
   </tr>
   <!-- <td><a routerLink="/pr/lines/{{pr.id}}"></a></td> -->
 </table>
-<a routerLink='/prli/create/{{pr}}' class='btn btn-primary' title='PRLI Create'>PRLI Create</a>
+<a routerLink='/prli/create/{{pr.id}}' class='btn btn-primary' title='PRLI Create'>PRLI Create</a>
 
 
 
@@ -63,10 +63,5 @@
   <!-- <a routerLink='/prli/edit/{{pr.id}}'><img src='./../../../../assets/pencil-icon.png' width='20' height='20' title='Edit'></a> -->
 
   <a routerLink='/pr/review/{{pr.id}}' class='btn btn-primary' title='Submit for Review'>Submit for Review</a>
-  <button (click)="count = count + 1" ng-init="count=0">
-      Increment
-    </button>
-    <span>
-      count: {{count}}
-    </span>
+
 <!-- refresh --> 

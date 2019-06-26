@@ -53,8 +53,7 @@ export class PrliCreateComponent implements OnInit {
       .subscribe(
         jresp => {
           this.jr=jresp;
-          console.log(jresp);
-        this.router.navigate(['/pr/lines/'+ Number(this.prid)]);
+        this.router.navigate(['/pr/lines/'+ Number(this.pr.id)]);
         });
         }
     
