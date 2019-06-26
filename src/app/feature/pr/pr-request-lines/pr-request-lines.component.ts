@@ -1,6 +1,6 @@
 import { PrliService } from '../../../service/prli.service';
 import { Prli } from '../../../../app/model/prli.class';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ɵɵcontainerRefreshEnd } from '@angular/core';
 import { JsonResponse } from '../../../model/json-response.class';
 import { PR } from '../../../model/pr.class';
 import { PrService } from '../../../service/pr.service';
@@ -31,10 +31,10 @@ export class PrRequestLinesComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute) { }
 
-    compareFn(v1: Product, v2: Product): boolean {
-      if(v1 == null || v2 == null) return false;
-      return v1.id == v2.id;
-    }
+  compareFn(v1: Product, v2: Product): boolean {
+    if (v1 == null || v2 == null) return false;
+    return v1.id == v2.id;
+  }
 
   ngOnInit() {
     console.log("PRLINES");
@@ -52,34 +52,32 @@ export class PrRequestLinesComponent implements OnInit {
     });
   }
 
-  delete(prli : Prli) {
+  delete(prli: Prli) {
     this.prliService.remove(prli).subscribe(
       jresp => {
-       console.log("delete");
-       this.jr = jresp;
+        console.log("delete");
+        this.jr = jresp;
         this.pr = this.jr.data as PR;
-        this.router.navigate(['/pr/list']);
+        this.refresh();
+        // this.router.navigate(['/pr/list']);
         console.log(jresp);
 
       }
-      );
-    }
-  
+    );
   }
 
-  // refresh() {
-  //   this.route.params.subscribe(params =>
-  //     this.prIdStr = params['id']);
 
-  //   this.prService.get(this.prIdStr).subscribe(jrsep => {
-  //     this.jr = jrsep;
-  //     this.pr = this.jr.data as PR
-  //     this.prliService.getLines(this.prIdStr).subscribe(jresp => {
-  //       console.log("PRLIS:", jresp);
-  //       this.jr = jresp;
-  //       this.prrequestlines = this.jr.data as Prli[];
-  //     });
-  //   });
-  // }
+  refresh() {
+    this.prService.get(this.prIdStr).subscribe(jrsep => {
+      this.jr = jrsep;
+      this.pr = this.jr.data as PR
+      this.prliService.getLines(this.prIdStr).subscribe(jresp => {
+        console.log("PRLIS:", jresp);
+        this.jr = jresp;
+        this.prrequestlines = this.jr.data as Prli[];
+      
+      });
+    });
 
-    
+  }
+}

@@ -24,6 +24,7 @@ export class PrliEditComponent implements OnInit {
   pr: PR;
   prli: Prli;
   prliIdStr: string;
+  prIdStr: string;
 
   constructor(
     private prliSvc: PrliService,
@@ -41,7 +42,9 @@ export class PrliEditComponent implements OnInit {
   ngOnInit(
   ) {
     this.prliIdStr = this.route.snapshot.params.id;
-
+    this.route.params.subscribe(params => 
+                this.prIdStr = params['id']);
+    
     this.productService.list().subscribe(
       jresp => {
         this.jr = jresp;
@@ -50,6 +53,11 @@ export class PrliEditComponent implements OnInit {
     )
 
     this.prliSvc.get(this.prliIdStr).subscribe(jresp => {
+      let jr = jresp;
+      this.prli = jr.data as Prli;
+
+    });
+    this.prliSvc.get(this.prIdStr).subscribe(jresp => {
       let jr = jresp;
       this.prli = jr.data as Prli;
     });
@@ -77,11 +85,21 @@ export class PrliEditComponent implements OnInit {
         jresp => {
           this.jr = jresp;
           // console.log(jresp);
-          this.router.navigate(['/pr/lines/' + Number(this.prid)]);
+          this.prli = this.jr.data as Prli;
+          this.router.navigate(['/pr/lines/' + Number(this.prIdStr)]);
         });
   }
-
 }
+
+  // edit() {
+  //   this.userSvc.edit(this.user).subscribe(
+  //     jresp => {
+  //       this.jr = jresp;
+  //       this.user = this.jr.data as User;
+  //       this.router.navigate(['/user/list']);
+  //     }
+  //   );
+  
 
 
 
