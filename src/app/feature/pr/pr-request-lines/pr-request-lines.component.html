@@ -13,7 +13,7 @@
 </div>
 
 
-<table class="table table-sm">
+<table class="table table-sm" *ngIf = "pr">
   <tr>
     <th class="table-secondary btn-link"><a class="btn btn-link font-weight-bold"><u>Description</u></a></th>
     <th class="table-secondary btn-link"><a class="btn btn-link font-weight-bold"><u>Status</u></a></th>
@@ -29,13 +29,13 @@
   </tr>
   <!-- <td><a routerLink="/pr/lines/{{pr.id}}"></a></td> -->
 </table>
-<a routerLink='/prli/create/{{pr.id}}' class='btn btn-primary' title='PRLI Create'>PRLI Create</a>
+<a *ngIf = "pr" routerLink='/prli/create/{{pr.id}}' class='btn btn-primary' title='PRLI Create'>PRLI Create</a>
 
 
 
 
 
-<table class="table table-sm">
+<table class="table table-sm" *ngIf = "prrequestlines">
   <tr>
     <th class="table-secondary btn-link"><a class="btn btn-link font-weight-bold"><u>Product</u></a></th>
     <th class="table-secondary btn-link"><a class="btn btn-link font-weight-bold"><u>Quantity</u></a></th>

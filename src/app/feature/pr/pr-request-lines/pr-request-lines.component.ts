@@ -57,9 +57,8 @@ export class PrRequestLinesComponent implements OnInit {
       jresp => {
        console.log("delete");
        this.jr = jresp;
-console.log(jresp);
         this.pr = this.jr.data as PR;
-        // this.router.navigate(['/pr/list']);
+        this.router.navigate(['/pr/list']);
         console.log(jresp);
 
       }
@@ -68,12 +67,7 @@ console.log(jresp);
   
   }
 
-
-
-
-
   // refresh() {
-  //   console.log("PRLINES");
   //   this.route.params.subscribe(params =>
   //     this.prIdStr = params['id']);
 
