@@ -54,14 +54,17 @@
       <a routerLink='/prli/edit/{{prli.id}}'><img src='./../../../../assets/pencil-icon.png' width='20' height='20'
           title='Edit'></a>
       <button (click)='delete(prli)' >Delete</button>
-      <!-- <img src='./../../../../assets/trashcan.png' width='20' height='20' title='Edit'> -->
-      
-           <!--  
- <button onclick='delete()'>Click me</button>-->
+
 </td>
   </tr>
   <!-- <a routerLink='/prli/edit/{{pr.id}}'><img src='./../../../../assets/pencil-icon.png' width='20' height='20' title='Edit'></a> -->
 
-  <a routerLink='/pr/review/{{pr.id}}' class='btn btn-primary' title='Submit for Review'>Submit for Review</a>
+  <!-- <a routerLink='/pr/lines/{{pr}}' class='btn btn-primary' title='Submit for Review'>Submit for Review</a> -->
+  <!-- <a routerLink='/pr/lines/{{pr.id}}' class='btn btn-primary' title='Submit for Review'>Submit for Review</a> -->
+  <!-- <  <a routerLink='/pr/lines/{{pr.id}}'button (click)='delete(prli)' >Delete</button> -->
+
 
 <!-- refresh --> 
+<span>
+<button (click)='submitForReview(pr)' class = "btn btn-primary">Submit for Review</button></span>
+

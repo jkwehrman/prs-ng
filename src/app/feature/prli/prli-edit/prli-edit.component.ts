@@ -55,11 +55,7 @@ export class PrliEditComponent implements OnInit {
     this.prliSvc.get(this.prliIdStr).subscribe(jresp => {
       let jr = jresp;
       this.prli = jr.data as Prli;
-
-    });
-    this.prliSvc.get(this.prIdStr).subscribe(jresp => {
-      let jr = jresp;
-      this.prli = jr.data as Prli;
+      console.log("*PRLI:", this.prli);
     });
   }
 
@@ -78,27 +74,19 @@ export class PrliEditComponent implements OnInit {
 
 
   edit() {
-    this.prli.purchaseRequest = this.pr;
     // console.log("PRLI:", this.prli);
     this.prliSvc.edit(this.prli)
       .subscribe(
         jresp => {
           this.jr = jresp;
-          // console.log(jresp);
+          console.log(jresp);
           this.prli = this.jr.data as Prli;
-          this.router.navigate(['/pr/lines/' + Number(this.prIdStr)]);
+          this.router.navigate(['/pr/lines/' + this.prli.purchaseRequest.id]);
         });
   }
 }
 
-  // edit() {
-  //   this.userSvc.edit(this.user).subscribe(
-  //     jresp => {
-  //       this.jr = jresp;
-  //       this.user = this.jr.data as User;
-  //       this.router.navigate(['/user/list']);
-  //     }
-  //   );
+
   
 
 

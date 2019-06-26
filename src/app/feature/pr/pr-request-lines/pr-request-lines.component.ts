@@ -37,7 +37,6 @@ export class PrRequestLinesComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log("PRLINES");
     this.route.params.subscribe(params =>
       this.prIdStr = params['id']);
 
@@ -68,7 +67,9 @@ export class PrRequestLinesComponent implements OnInit {
 
 
   refresh() {
-    this.prService.get(this.prIdStr).subscribe(jrsep => {
+    this.prService.get(this.prIdStr)
+    .subscribe
+    (jrsep => {
       this.jr = jrsep;
       this.pr = this.jr.data as PR
       this.prliService.getLines(this.prIdStr).subscribe(jresp => {
@@ -80,4 +81,16 @@ export class PrRequestLinesComponent implements OnInit {
     });
 
   }
+
+submitForReview(pr: PR) {
+    console.log("PR:", pr);
+    this.prService.submitForReview(pr)
+      .subscribe(
+        jresp => {
+          console.log("JRESP:", jresp);
+          this.jr = jresp;
+          this.router.navigate(['/pr/list/']);
+        })
+  }
 }
+
