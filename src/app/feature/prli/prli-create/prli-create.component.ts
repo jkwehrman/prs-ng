@@ -60,12 +60,3 @@ export class PrliCreateComponent implements OnInit {
     
       }
 
-      // create() {
-      //   this.userSVc.create(this.user)
-      //   .subscribe(
-      //     jresp => {
-      //       this.jr=jresp;
-      //       //assume a good call, fwd to User-List
-      //     this.router.navigate(['/user/list']);
-      //     });
-      //     }

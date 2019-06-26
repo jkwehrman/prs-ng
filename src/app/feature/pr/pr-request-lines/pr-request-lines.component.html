@@ -1,67 +1,72 @@
 <app-menu></app-menu>
 <div class='component-content'>
-<div class= 'lefthalf'>
-<span class ='component-title'>{{title}}</span>
-<span>
+  <div class='lefthalf'>
+    <span class='component-title'>{{title}}</span>
+    <span>
 
-    <img id='createnew' width='20' height='20' src='../../../../assets/add-icon.png' title='Add New'>
-    <img id='createnew' width='20' height='20' src='../../../../assets/glass.png'>
+      <img id='createnew' width='20' height='20' src='../../../../assets/add-icon.png' title='Add New'>
+      <img id='createnew' width='20' height='20' src='../../../../assets/glass.png'>
 
 
-</span>
+    </span>
+  </div>
 </div>
-</div>
 
 
-<table class="table table-sm" *ngIf="pr" >
+<table class="table table-sm">
   <tr>
-  <th class="table-secondary btn-link"><a class="btn btn-link font-weight-bold" ><u>Description</u></a></th>
-  <th class="table-secondary btn-link"><a class="btn btn-link font-weight-bold" ><u>Status</u></a></th>
-  <th class="table-secondary btn-link"><a class="btn btn-link font-weight-bold" ><u>Total</u></a></th>
-  <th class="table-secondary btn-link"><a class="btn btn-link font-weight-bold" ><u>User</u></a></th>
+    <th class="table-secondary btn-link"><a class="btn btn-link font-weight-bold"><u>Description</u></a></th>
+    <th class="table-secondary btn-link"><a class="btn btn-link font-weight-bold"><u>Status</u></a></th>
+    <th class="table-secondary btn-link"><a class="btn btn-link font-weight-bold"><u>Total</u></a></th>
+    <th class="table-secondary btn-link"><a class="btn btn-link font-weight-bold"><u>User</u></a></th>
 
-</tr>
-
-
-
-
-
-  <td>{{pr.description}}</td>
-  <td>{{pr.status}}</td>
-  <td>{{pr.total | currency}}</td>
-  <td>{{pr.user.userName}}</td>
-
+  </tr>
+  <tr>
+    <td>{{pr.description}}</td>
+    <td>{{pr.status}}</td>
+    <td>{{pr.total | currency}}</td>
+    <td>{{pr.user.userName}}</td>
+  </tr>
   <!-- <td><a routerLink="/pr/lines/{{pr.id}}"></a></td> -->
 </table>
-  <a routerLink='/prli/create/{{pr.id}}' class='btn btn-primary' title='PRLI Create'>PRLI Create</a>
+<a routerLink='/prli/create/{{pr}}' class='btn btn-primary' title='PRLI Create'>PRLI Create</a>
 
 
 
 
 
-<table class="table table-sm" >
+<table class="table table-sm">
   <tr>
-  <th class="table-secondary btn-link"><a class="btn btn-link font-weight-bold" ><u>Product</u></a></th>
-  <th class="table-secondary btn-link"><a class="btn btn-link font-weight-bold" ><u>Quantity</u></a></th>
-  <th class="table-secondary btn-link"><a class="btn btn-link font-weight-bold" ><u>Price</u></a></th>
-  <th class="table-secondary btn-link"><a class="btn btn-link font-weight-bold" ><u>Line Total</u></a></th>
-  <th class="table-secondary btn-link"><a class="btn btn-link font-weight-bold" ><u>Actions</u></a></th>
+    <th class="table-secondary btn-link"><a class="btn btn-link font-weight-bold"><u>Product</u></a></th>
+    <th class="table-secondary btn-link"><a class="btn btn-link font-weight-bold"><u>Quantity</u></a></th>
+    <th class="table-secondary btn-link"><a class="btn btn-link font-weight-bold"><u>Price</u></a></th>
+    <th class="table-secondary btn-link"><a class="btn btn-link font-weight-bold"><u>Line Total</u></a></th>
+    <th class="table-secondary btn-link"><a class="btn btn-link font-weight-bold"><u>Actions</u></a></th>
 
-</tr>
-<tr *ngFor = "let prli of prrequestlines">
-<td>{{prli.product.name}}</td>
-<td>{{prli.quantity}}</td>
-<td>{{prli.product.price | currency}}</td>
-<td>{{prli.quantity}}</td>
-<td class='actions'>
-<!-- <a routerLink='/pr/detail/{{prli.id}}'><img src='assets/details.png' width='20' height='20' title='Detail'></a> -->
-<a routerLink='/prli/edit/{{pr.id}}'><img src='./../../../../assets/pencil-icon.png' width='20' height='20' title='Edit'></a>
-<a><img src='./../../../../assets/trashcan.png' width='20' height='20' title='Edit'></a>
+  </tr>
+  <tr *ngFor="let prli of prrequestlines"  >
+    <td>{{prli.product.name}}</td>
+    <td>{{prli.quantity}}</td>
+    <td>{{prli.product.price | currency}}</td>
+    <td>{{prli.quantity * prli.product.price | currency}}</td>
+    <td class='actions'>
+      <!-- <a routerLink='/pr/detail/{{prli.id}}'><img src='assets/details.png' width='20' height='20' title='Detail'></a> -->
+      <a routerLink='/prli/edit/{{prli.id}}'><img src='./../../../../assets/pencil-icon.png' width='20' height='20'
+          title='Edit'></a>
+      <button (click)='delete(prli)' >Delete</button>
+      <!-- <img src='./../../../../assets/trashcan.png' width='20' height='20' title='Edit'> -->
+      
+           <!--  
+ <button onclick='delete()'>Click me</button>-->
+</td>
+  </tr>
+  <!-- <a routerLink='/prli/edit/{{pr.id}}'><img src='./../../../../assets/pencil-icon.png' width='20' height='20' title='Edit'></a> -->
 
-</tr>
-<!-- <a routerLink='/prli/edit/{{pr.id}}'><img src='./../../../../assets/pencil-icon.png' width='20' height='20' title='Edit'></a> -->
-
-<a routerLink='/pr/review/{{pr.id}}' class='btn btn-primary' title='Submit for Review'>Submit for Review</a>
-
-<!-- (click)remove
-refresh -->
+  <a routerLink='/pr/review/{{pr.id}}' class='btn btn-primary' title='Submit for Review'>Submit for Review</a>
+  <button (click)="count = count + 1" ng-init="count=0">
+      Increment
+    </button>
+    <span>
+      count: {{count}}
+    </span>
+<!-- refresh --> 

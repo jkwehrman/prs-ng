@@ -21,6 +21,7 @@ export class PrRequestLinesComponent implements OnInit {
   title: string = "PR-Request-Lines"
   prIdStr: string;
   pr: PR;
+  prli: Prli;
 
 
   constructor(
@@ -30,6 +31,10 @@ export class PrRequestLinesComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute) { }
 
+    compareFn(v1: Product, v2: Product): boolean {
+      if(v1 == null || v2 == null) return false;
+      return v1.id == v2.id;
+    }
 
   ngOnInit() {
     console.log("PRLINES");
@@ -47,16 +52,24 @@ export class PrRequestLinesComponent implements OnInit {
     });
   }
 
-//   delete() {
-//     this.prliService.remove(this.prli).subscribe(jresp => {
-//       jresp => {
-//         this.jr = jresp;
-// console.log(jresp);
-//         // this.pr = this.jr.data as PR;
-//         // this.router.navigate(['/pr/list']);
-//       }
-//   );
-// }
+  delete(prli : Prli) {
+    this.prliService.remove(prli).subscribe(
+      jresp => {
+       console.log("delete");
+       this.jr = jresp;
+console.log(jresp);
+        this.pr = this.jr.data as PR;
+        // this.router.navigate(['/pr/list']);
+        console.log(jresp);
+
+      }
+      );
+    }
+  
+  }
+
+
+
 
 
   // refresh() {
@@ -74,5 +87,5 @@ export class PrRequestLinesComponent implements OnInit {
   //     });
   //   });
   // }
-}
+
     

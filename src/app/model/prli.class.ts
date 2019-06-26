@@ -1,7 +1,10 @@
+import { PR } from "./pr.class";
+
 export class Prli  {
 
     id: number;
     PurchaseRequestID: number;
+    purchaseRequest: PR;
     product: string;
     quantity: string;
 

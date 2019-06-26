@@ -35,6 +35,7 @@ export class UserDetailComponent implements OnInit {
             this.jr = jresp;
             this.user = this.jr.data as User;
             this.router.navigate(['/user/list']);
+            console.log(jresp);
           }
       );
     }
