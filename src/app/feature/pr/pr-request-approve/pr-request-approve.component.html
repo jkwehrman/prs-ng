@@ -1,12 +1,13 @@
 <app-menu></app-menu>
 <div class='component-content'>
   <div class='lefthalf'>
-    <span class='component-title'>{{title}}</span>
+    <!-- <span class='component-title'>{{title}}</span> -->
   </div>
 </div>
 
     <table class="table table-sm" >
         <tr>
+          
           <th class="table-secondary btn-link"><a class="btn btn-link font-weight-bold"><u>Id</u></a></th>
           <th class="table-secondary btn-link"><a class="btn btn-link font-weight-bold"><u>Description</u></a></th>
           <th class="table-secondary btn-link"><a class="btn btn-link font-weight-bold"><u>Status</u></a></th>
@@ -14,9 +15,30 @@
       
         </tr>
         <tr>
-          <td>{{pr.Id}}</td>
-          <td>{{pr.Description}}</td>
-          <td>{{pr.Status}}</td>
+          <td>{{pr.id}}</td>
+          <td>{{pr.description}}</td>
+          <td>{{pr.status}}</td>
           <td>{{pr.total | currency}}</td>
         </tr>
       </table>
+
+      <table class="table table-sm" *ngIf = "prrequestlines">
+          <tr>
+              <th class="table-secondary btn-link"><a class="btn btn-link font-weight-bold"><u>Id</u></a></th>
+            <th class="table-secondary btn-link"><a class="btn btn-link font-weight-bold"><u>Product</u></a></th>
+            <th class="table-secondary btn-link"><a class="btn btn-link font-weight-bold"><u>Quantity</u></a></th>
+            <th class="table-secondary btn-link"><a class="btn btn-link font-weight-bold"><u>Price</u></a></th>
+            <th class="table-secondary btn-link"><a class="btn btn-link font-weight-bold"><u>Line Total</u></a></th>
+        
+          </tr>
+          <tr *ngFor="let prli of prrequestlines"  >
+              <td>{{prli.id}}</td>
+            <td>{{prli.product.name}}</td>
+            <td>{{prli.quantity}}</td>
+            <td>{{prli.product.price | currency}}</td>
+            <td>{{prli.quantity * prli.product.price | currency}}</td>
+            
+          </tr>
+
+
+        <button (click)='approve(pr)' class = "btn btn-primary">Approve</button>

@@ -38,8 +38,8 @@ export class UserLoginComponent implements OnInit {
   }
   ngOnInit() {
     // defaulting uname and pwd for testing purposes
-    this.user.userName = 'snblessing';
-    this.user.password = 'login';
+    this.user.userName = 'j';
+    this.user.password = 'j';
   }
 
 }

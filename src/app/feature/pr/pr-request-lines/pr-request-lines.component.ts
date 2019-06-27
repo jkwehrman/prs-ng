@@ -15,6 +15,7 @@ import { Product } from '../../../model/product.class';
   templateUrl: './pr-request-lines.component.html',
   styleUrls: ['./pr-request-lines.component.css']
 })
+
 export class PrRequestLinesComponent implements OnInit {
   jr: JsonResponse;
   prrequestlines: Prli[];
