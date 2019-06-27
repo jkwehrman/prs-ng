@@ -36,11 +36,8 @@ export class PrService {
   } 
   listReview(user: User): Observable<JsonResponse> {
     return this.http.post(this.url + "list-review", user) as Observable<JsonResponse>;
-
-    // purchase-requests/approve
-
-}
-approve(pr: PR): Observable<JsonResponse> {
+  }
+  approve(pr: PR): Observable<JsonResponse> {
   return this.http.put(this.url + "approve", pr) as Observable<JsonResponse>;
-}
-}
+  }
+} 

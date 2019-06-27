@@ -51,6 +51,17 @@ console.log( this.prIdStr);
       }
 
 
+
+
+
+  approve(pr: PR) {
+    // console.log("PR:", pr);
+    this.prService.approve(pr)
+      .subscribe(
+        jresp => {
+          console.log("JRESP:", jresp);
+          this.jr = jresp;
+          this.router.navigate(['/pr/review']);
+        })
   }
-
-
+}
