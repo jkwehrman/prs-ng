@@ -59,15 +59,7 @@ export class PrliEditComponent implements OnInit {
     });
   }
 
-  // ngOnInit() {
-  //   this.route.params.subscribe(params => 
-  //           this.prIdStr = params['id']);
-  //   this.productService.get(this.prIdStr).subscribe(jresp => {
-  //     this.jr = jresp;
-  // this.products = this.jr.data as Product[];
-  //   });
-
-  // }
+ 
 
 
 
