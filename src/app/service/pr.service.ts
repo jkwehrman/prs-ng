@@ -3,6 +3,7 @@ import { Observable } from 'rxjs';
 import { JsonResponse } from '../model/json-response.class';
 import { HttpClient } from '@angular/common/http';
 import { PR } from '../model/pr.class';
+import { User } from '../model/user.class';
 
 
 @Injectable({
@@ -33,8 +34,8 @@ export class PrService {
   submitForReview(pr: PR): Observable<JsonResponse> {
     return this.http.put(this.url + "submit-review", pr) as Observable<JsonResponse>;
   } 
-  listReview(pr: PR): Observable<JsonResponse> {
-    return this.http.put(this.url + "submit-review", pr) as Observable<JsonResponse>;
+  listReview(user: User): Observable<JsonResponse> {
+    return this.http.post(this.url + "list-review", user) as Observable<JsonResponse>;
 
 
 
