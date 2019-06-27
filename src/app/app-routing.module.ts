@@ -27,13 +27,16 @@ import { PrDetailComponent } from './feature/pr/pr-detail/pr-detail.component';
 
 // import { PrApproveComponent } from './feature/pr/pr-request-approve/pr-request-approve.component';
 import { PrRequestApproveComponent } from './feature/pr/pr-request-approve/pr-request-approve.component';
+// import { PrRequestReviewComponent } from './feature/pr/pr-request-review/pr-request-review.component';
 import { PrRequestReviewComponent } from './feature/pr/pr-request-review/pr-request-review.component';
-import { PrRequestLinesComponent } from './feature/pr/pr-request-lines/pr-request-lines.component';
 
+import { PrRequestLinesComponent } from './feature/pr/pr-request-lines/pr-request-lines.component';
 import { PrliCreateComponent } from './feature/prli/prli-create/prli-create.component';
 import { PrliEditComponent } from './feature/prli/prli-edit/prli-edit.component';
 import { PrliDeleteComponent } from './feature/prli/prli-delete/prli-delete.component';
 
+// import { PRListComponent } from './feature/pr/pr-list/pr-list.component';
+// import { PrRequestReviewComponent } from './feature/pr/pr-request-review/pr-request-review.component';
 
 
 const routes: Routes = [
@@ -66,7 +69,9 @@ const routes: Routes = [
   {path:'pr/detail/:id', component: PrDetailComponent},
   {path:'pr/remove/:id', component: PrDetailComponent},
   {path:'pr/approve/:id', component: PrRequestApproveComponent},
-  {path:'pr/review/:id', component: PrRequestReviewComponent},
+  {path:'pr/review', component: PrRequestReviewComponent},
+  // {path:'pr/review/:id', component: PrRequestReviewComponent},
+
   {path:'pr/lines/:id', component: PrRequestLinesComponent},
 
   {path:'prli/create/:id', component: PrliCreateComponent},

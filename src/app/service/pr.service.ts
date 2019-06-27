@@ -4,7 +4,6 @@ import { JsonResponse } from '../model/json-response.class';
 import { HttpClient } from '@angular/common/http';
 import { PR } from '../model/pr.class';
 
-// PrRequestLinesService
 
 @Injectable({
   providedIn: 'root'
@@ -34,7 +33,12 @@ export class PrService {
   submitForReview(pr: PR): Observable<JsonResponse> {
     return this.http.put(this.url + "submit-review", pr) as Observable<JsonResponse>;
   } 
+  listReview(pr: PR): Observable<JsonResponse> {
+    return this.http.put(this.url + "submit-review", pr) as Observable<JsonResponse>;
 
 
 
 }
+}
+
+// PrRequestReviewComponent
