@@ -1,3 +1,22 @@
-<p>
-  pr-request-approve works!
-</p>
+<app-menu></app-menu>
+<div class='component-content'>
+  <div class='lefthalf'>
+    <span class='component-title'>{{title}}</span>
+  </div>
+</div>
+
+    <table class="table table-sm" >
+        <tr>
+          <th class="table-secondary btn-link"><a class="btn btn-link font-weight-bold"><u>Id</u></a></th>
+          <th class="table-secondary btn-link"><a class="btn btn-link font-weight-bold"><u>Description</u></a></th>
+          <th class="table-secondary btn-link"><a class="btn btn-link font-weight-bold"><u>Status</u></a></th>
+          <th class="table-secondary btn-link"><a class="btn btn-link font-weight-bold"><u>Total</u></a></th>
+      
+        </tr>
+        <tr>
+          <td>{{pr.Id}}</td>
+          <td>{{pr.Description}}</td>
+          <td>{{pr.Status}}</td>
+          <td>{{pr.total | currency}}</td>
+        </tr>
+      </table>

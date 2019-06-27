@@ -3,11 +3,6 @@
   <div class='lefthalf'>
     <span class='component-title'>{{title}}</span>
     <span>
-
-      <!-- <img id='createnew' width='20' height='20' src='../../../../assets/add-icon.png' title='Add New'> -->
-      <!-- <img id='createnew' width='20' height='20' src='../../../../assets/glass.png'> -->
-
-
     </span>
   </div>
 </div>
@@ -27,13 +22,8 @@
     <td>{{pr.total | currency}}</td>
     <td>{{pr.user.userName}}</td>
   </tr>
-  <!-- <td><a routerLink="/pr/lines/{{pr.id}}"></a></td> -->
 </table>
 <a *ngIf = "pr" routerLink='/prli/create/{{pr.id}}' class='btn btn-primary' title='PRLI Create'>PRLI Create</a>
-
-
-
-
 
 <table class="table table-sm" *ngIf = "prrequestlines">
   <tr>
@@ -50,27 +40,14 @@
     <td>{{prli.product.price | currency}}</td>
     <td>{{prli.quantity * prli.product.price | currency}}</td>
     <td class='actions'>
-      <!-- <a routerLink='/pr/detail/{{prli.id}}'><img src='assets/details.png' width='20' height='20' title='Detail'></a> -->
       <a routerLink='/prli/edit/{{prli.id}}'><img src='./../../../../assets/pencil-icon.png' width='20' height='20'
           title='Edit'></a>
       <button (click)='delete(prli)' >Delete</button>
 
 </td>
   </tr>
-  <!-- <a routerLink='/prli/edit/{{pr.id}}'><img src='./../../../../assets/pencil-icon.png' width='20' height='20' title='Edit'></a> -->
 
-  <!-- <a routerLink='/pr/lines/{{pr}}' class='btn btn-primary' title='Submit for Review'>Submit for Review</a> -->
-  <!-- <a routerLink='/pr/lines/{{pr.id}}' class='btn btn-primary' title='Submit for Review'>Submit for Review</a> -->
-  <!-- <  <a routerLink='/pr/lines/{{pr.id}}'button (click)='delete(prli)' >Delete</button> -->
-
-
-<!-- refresh --> 
 <span>
 <button (click)='submitForReview(pr)' class = "btn btn-primary">Submit for Review</button></span>
 
 
-<!-- set as a test -->
-  <a routerLink='/pr/review/{{pr.id}}'><img src='./../../../../assets/magnifying-glass.png' width='20' height='20' title='Edit'></a>
-  <a routerLink='/pr/review'><img src='./../../../../assets/magnifying-glass.png' width='20' height='20' title='Edit'></a>
-  user/login
-  <a routerLink='/user/login'><img src='./../../../../assets/magnifying-glass.png' width='20' height='20' title='Edit'></a>
