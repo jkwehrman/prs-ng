@@ -21,6 +21,7 @@ export class PrRequestApproveComponent implements OnInit {
     prIdStr: string;
     pr: PR;
     prli: Prli;
+    rejectMessage: string;
 
     constructor(
       private prliService: PrliService,
@@ -64,4 +65,18 @@ console.log( this.prIdStr);
           this.router.navigate(['/pr/review']);
         })
   }
+
+  reject(pr: PR) {
+    // console.log("PR:", pr);
+    this.prService.reject(pr)
+      .subscribe(
+        jresp => {
+          console.log("JRESP:", jresp);
+          this.jr = jresp;
+          this.router.navigate(['/pr/review']);
+        })
+  }
+
+
 }
+

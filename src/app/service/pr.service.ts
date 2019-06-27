@@ -40,4 +40,7 @@ export class PrService {
   approve(pr: PR): Observable<JsonResponse> {
   return this.http.put(this.url + "approve", pr) as Observable<JsonResponse>;
   }
+  reject(pr: PR): Observable<JsonResponse> {
+    return this.http.put(this.url + "reject", pr) as Observable<JsonResponse>;
+    }
 } 

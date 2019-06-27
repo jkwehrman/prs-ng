@@ -41,5 +41,8 @@
           </tr>
 
 
-        <button (click)='approve(pr)' class = "btn btn-primary">Approve</button>
-        <!-- <button (click)='submitForReview(pr)' class = "btn btn-primary">Submit for Review</button></span> -->
+        <button (click)='approve(pr)' class = "btn btn-success">Approve</button>
+
+
+        <input [(ngModel)]="pr.reasonForRejection" type="text" placeholder="Reject message">
+        <button *ngIf="pr.reasonForRejection"(click)='reject(pr)' class = "btn btn-danger" >Reject</button>
