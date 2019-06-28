@@ -22,16 +22,16 @@ export class UserService {
   }
 
   create(user: User): Observable<JsonResponse> {
-    return this.http.post(this.url, user) as Observable<JsonResponse>;  
+    return this.http.post(this.url, user) as Observable<JsonResponse>;
   }
   edit(user: User): Observable<JsonResponse> {
     return this.http.put(this.url, user) as Observable<JsonResponse>;
-  } 
+  }
   remove(user: User): Observable<JsonResponse> {
-    return this.http.delete(this.url+user.id) as Observable<JsonResponse>;
-  } 
+    return this.http.delete(this.url + user.id) as Observable<JsonResponse>;
+  }
 
-  login(user: User): Observable<JsonResponse> { 
-    return this.http.post(this.url+"/authenticate", user) as Observable<JsonResponse>;
-  } 
+  login(user: User): Observable<JsonResponse> {
+    return this.http.post(this.url + "/authenticate", user) as Observable<JsonResponse>;
+  }
 }

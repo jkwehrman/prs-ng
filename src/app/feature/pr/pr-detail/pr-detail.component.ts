@@ -15,28 +15,27 @@ export class PrDetailComponent implements OnInit {
   jr: JsonResponse;
   pr: PR;
 
-
   constructor(private prSvc: PrService,
     private router: Router,
     private route: ActivatedRoute) { }
 
-    ngOnInit() {
-      this.route.params.subscribe(params => 
-        this.prIdStr = params['id']);
-        this.prSvc.get(this.prIdStr).subscribe(jresp => {
+  ngOnInit() {
+    this.route.params.subscribe(params =>
+      this.prIdStr = params['id']);
+    this.prSvc.get(this.prIdStr).subscribe(jresp => {
+      this.jr = jresp;
+      this.pr = this.jr.data as PR;
+    });
+  }
+
+  remove() {
+    this.prSvc.remove(this.pr).subscribe(
+      jresp => {
         this.jr = jresp;
         this.pr = this.jr.data as PR;
-      });
-    }
-  
-    remove() {
-        this.prSvc.remove(this.pr).subscribe(
-          jresp => {
-            this.jr = jresp;
-            this.pr = this.jr.data as PR;
-            this.router.navigate(['/pr/list']);
-          }
-      );
-    }
-  
+        this.router.navigate(['/pr/list']);
+      }
+    );
   }
+
+}

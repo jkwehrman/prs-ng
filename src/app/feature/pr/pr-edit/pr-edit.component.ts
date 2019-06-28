@@ -20,25 +20,23 @@ export class PrEditComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute) { }
 
-    ngOnInit() {
-      this.route.params.subscribe(params => 
-              this.prIdStr = params['id']);
-      this.prSvc.get(this.prIdStr).subscribe(jresp => {
-        console.log(jresp);
+  ngOnInit() {
+    this.route.params.subscribe(params =>
+      this.prIdStr = params['id']);
+    this.prSvc.get(this.prIdStr).subscribe(jresp => {
+      console.log(jresp);
+      this.jr = jresp;
+      this.pr = this.jr.data as PR;
+    });
+  }
+
+  edit() {
+    this.prSvc.edit(this.pr).subscribe(
+      jresp => {
         this.jr = jresp;
         this.pr = this.jr.data as PR;
-      });
-      
-    }
-      
-    edit() {
-      this.prSvc.edit(this.pr).subscribe(
-        jresp => {
-          this.jr = jresp;
-          this.pr = this.jr.data as PR;
-          this.router.navigate(['/pr/list']);
-        }
-      );
-    }
-  
+        this.router.navigate(['/pr/list']);
+      }
+    );
   }
+}

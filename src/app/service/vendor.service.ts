@@ -22,14 +22,13 @@ export class VendorService {
   }
 
   create(vendor: Vendor): Observable<JsonResponse> {
-    return this.http.post(this.url, vendor) as Observable<JsonResponse>;  
+    return this.http.post(this.url, vendor) as Observable<JsonResponse>;
   }
   edit(vendor: Vendor): Observable<JsonResponse> {
     return this.http.put(this.url, vendor) as Observable<JsonResponse>;
-  } 
+  }
   remove(vendor: Vendor): Observable<JsonResponse> {
-    return this.http.delete(this.url+vendor.id) as Observable<JsonResponse>;
-  } 
-
+    return this.http.delete(this.url + vendor.id) as Observable<JsonResponse>;
+  }
 }
 

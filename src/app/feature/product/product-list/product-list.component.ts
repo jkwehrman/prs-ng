@@ -11,7 +11,7 @@ import { JsonResponse } from '../../../../app/model/json-response.class';
 export class ProductListComponent implements OnInit {
   jr: JsonResponse;
   products: Product[];
-  title:string = "Product-List"; 
+  title: string = "Product-List";
   sortCriteria: string = "id";
   sortOrder: string = "asc";
 
@@ -24,17 +24,14 @@ export class ProductListComponent implements OnInit {
         this.products = this.jr.data as Product[];
       }
     );
+  }
 
-      }
-    
-      sortBy(column: string): void {
-        if(this.sortCriteria === column) {
-          this.sortOrder = this.sortOrder === 'asc' ? 'desc' : 'asc';
-        } else {
-          this.sortCriteria = column;
-          this.sortOrder = 'asc';
-        }
-      }
-    
-
+  sortBy(column: string): void {
+    if (this.sortCriteria === column) {
+      this.sortOrder = this.sortOrder === 'asc' ? 'desc' : 'asc';
+    } else {
+      this.sortCriteria = column;
+      this.sortOrder = 'asc';
     }
+  }
+}

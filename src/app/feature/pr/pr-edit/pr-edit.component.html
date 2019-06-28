@@ -1,69 +1,69 @@
 <app-menu></app-menu>
 <div id='component'>
-  <div id = "pagetitle">
-  <span>{{title}}</span>
-  
-</div>
-<p *ngIf='!pr'>Loading...</p>
-<div *ngIf='pr'>
- 
-  <div class="form-group row">
-    <label class='col-form-label col-sm-2' for="id">pr Id:</label>
-    <input [(ngModel)]='pr.Id' name = 'Id' type="text" class="form-control col-sm-6" 
-    id="id" aria-describedby="idHelp" placeholder="Id">
-    <small id="idHelp" class="form-text text-muted col-sm-2">Id</small>
+  <div id="pagetitle">
+    <span>{{title}}</span>
+
   </div>
-  <div class="form-group row">
+  <p *ngIf='!pr'>Loading...</p>
+  <div *ngIf='pr'>
+
+    <div class="form-group row">
+      <label class='col-form-label col-sm-2' for="id">pr Id:</label>
+      <input [(ngModel)]='pr.Id' name='Id' type="text" class="form-control col-sm-6" id="id" aria-describedby="idHelp"
+        placeholder="Id">
+      <small id="idHelp" class="form-text text-muted col-sm-2">Id</small>
+    </div>
+    <div class="form-group row">
       <label class='col-form-label col-sm-2' for="description">Description:</label>
-      <input [(ngModel)]='pr.description' name = 'Description' type="text" class="form-control col-sm-6" 
-      id="description" aria-describedby="descriptionHelp" placeholder="Description">
+      <input [(ngModel)]='pr.description' name='Description' type="text" class="form-control col-sm-6" id="description"
+        aria-describedby="descriptionHelp" placeholder="Description">
       <small id="descriptionHelp" class="form-text text-muted col-sm-2">Description</small>
     </div>
     <div class="form-group row">
-        <label class='col-form-label col-sm-2' for="justification">Justification:</label>
-        <input [(ngModel)]='pr.justification' name = 'Justification' type="text" class="form-control col-sm-6" 
+      <label class='col-form-label col-sm-2' for="justification">Justification:</label>
+      <input [(ngModel)]='pr.justification' name='Justification' type="text" class="form-control col-sm-6"
         id="justification" aria-describedby="justificationHelp" placeholder="Justification">
-        <small id="justificationHelp" class="form-text text-muted col-sm-2">Justification</small>
-      </div>
-      <div class="form-group row">
-          <label class='col-form-label col-sm-2' for="dateNeeded">Date Needed:</label>
-          <input [(ngModel)]='pr.dateNeeded' name = 'Date Needed' type="date" class="form-control col-sm-6" 
-          id="dateNeeded" aria-describedby="dateNeededHelp" placeholder="Date Needed">
-          <small id="dateNeededHelp" class="form-text text-muted col-sm-2">Date Needed</small>
-        </div>
-        <div class="form-group row">
-            <label class='col-form-label col-sm-2' for="deliveryMode">Delivery Mode:</label>
-            <input [(ngModel)]='pr.deliveryMode' name = 'Delivery Mode' type="text" class="form-control col-sm-6" 
-            id="deliveryMode" aria-describedby="deliveryModeHelp" placeholder="Delivery Mode">
-            <small id="deliveryModeHelp" class="form-text text-muted col-sm-2">Delivery Mode</small>
-          </div>
-          <div class="form-group row">
-              <label class='col-form-label col-sm-2' for="status">Status:</label>
-              <input [(ngModel)]='pr.status' name = 'Status' type="text" class="form-control col-sm-6" 
-              id="status" aria-describedby="statusHelp" readonly placeholder="Status">
-              <small id="statusHelp" class="form-text text-muted col-sm-2">Status</small>
-            </div>
-            <div class="form-group row">
-                <label class='col-form-label col-sm-2' for="total">Total:</label>
-                <input [(ngModel)]='pr.total' name = 'Total' type="text" class="form-control col-sm-6" 
-                id="total" aria-describedby="totalHelp" readonly placeholder="Total">
-                <small id="totalHelp" class="form-text text-muted col-sm-2">Total</small>
-              </div>
-              <div class="form-group row">
-                  <label class='col-form-label col-sm-2' for="submittedDate">Submitted Date:</label>
-                  <input [(ngModel)]='pr.submittedDate' name = 'Submitted Date' type="datetime" class="form-control col-sm-6" 
-                  id="submittedDate" aria-describedby="submittedDateHelp" readonly placeholder="Submitted Date">
-                  <small id="submittedDateHelp" class="form-text text-muted col-sm-2">Submitted Date</small>
-                </div>
-                <div class="form-group row">
-                    <label class='col-form-label col-sm-2' for="reasonForRejection">Reason For Rejection:</label>
-                    <input [(ngModel)]='pr.reasonForRejection' name = 'Reason For Rejection' type="text" class="form-control col-sm-6" 
-                    id="description" aria-describedby="descriptionHelp" placeholder="Description">
-                    <small id="reasonForRejectionHelp" class="form-text text-muted col-sm-2">Reason For Rejection</small>
-                  </div>
-  <div class='form-group'>
-    <button (click)='edit()' class='btn btn-primary'>Save</button>
-    
+      <small id="justificationHelp" class="form-text text-muted col-sm-2">Justification</small>
+    </div>
+    <div class="form-group row">
+      <label class='col-form-label col-sm-2' for="dateNeeded">Date Needed:</label>
+      <input [(ngModel)]='pr.dateNeeded' name='Date Needed' type="date" class="form-control col-sm-6" id="dateNeeded"
+        aria-describedby="dateNeededHelp" placeholder="Date Needed">
+      <small id="dateNeededHelp" class="form-text text-muted col-sm-2">Date Needed</small>
+    </div>
+    <div class="form-group row">
+      <label class='col-form-label col-sm-2' for="deliveryMode">Delivery Mode:</label>
+      <input [(ngModel)]='pr.deliveryMode' name='Delivery Mode' type="text" class="form-control col-sm-6"
+        id="deliveryMode" aria-describedby="deliveryModeHelp" placeholder="Delivery Mode">
+      <small id="deliveryModeHelp" class="form-text text-muted col-sm-2">Delivery Mode</small>
+    </div>
+    <div class="form-group row">
+      <label class='col-form-label col-sm-2' for="status">Status:</label>
+      <input [(ngModel)]='pr.status' name='Status' type="text" class="form-control col-sm-6" id="status"
+        aria-describedby="statusHelp" readonly placeholder="Status">
+      <small id="statusHelp" class="form-text text-muted col-sm-2">Status</small>
+    </div>
+    <div class="form-group row">
+      <label class='col-form-label col-sm-2' for="total">Total:</label>
+      <input [(ngModel)]='pr.total' name='Total' type="text" class="form-control col-sm-6" id="total"
+        aria-describedby="totalHelp" readonly placeholder="Total">
+      <small id="totalHelp" class="form-text text-muted col-sm-2">Total</small>
+    </div>
+    <div class="form-group row">
+      <label class='col-form-label col-sm-2' for="submittedDate">Submitted Date:</label>
+      <input [(ngModel)]='pr.submittedDate' name='Submitted Date' type="datetime" class="form-control col-sm-6"
+        id="submittedDate" aria-describedby="submittedDateHelp" readonly placeholder="Submitted Date">
+      <small id="submittedDateHelp" class="form-text text-muted col-sm-2">Submitted Date</small>
+    </div>
+    <div class="form-group row">
+      <label class='col-form-label col-sm-2' for="reasonForRejection">Reason For Rejection:</label>
+      <input [(ngModel)]='pr.reasonForRejection' name='Reason For Rejection' type="text" class="form-control col-sm-6"
+        id="description" aria-describedby="descriptionHelp" placeholder="Description">
+      <small id="reasonForRejectionHelp" class="form-text text-muted col-sm-2">Reason For Rejection</small>
+    </div>
+    <div class='form-group'>
+      <button (click)='edit()' class='btn btn-primary'>Save</button>
+
+    </div>
   </div>
-</div>
 </div>

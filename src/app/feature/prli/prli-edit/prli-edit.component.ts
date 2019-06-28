@@ -14,7 +14,6 @@ import { PR } from '../../../model/pr.class';
   styleUrls: ['./prli-edit.component.css']
 })
 
-
 export class PrliEditComponent implements OnInit {
 
   jr: JsonResponse;
@@ -35,16 +34,16 @@ export class PrliEditComponent implements OnInit {
   ) { }
 
   compareFn(v1: Product, v2: Product): boolean {
-    if(v1 == null || v2 == null) return false;
+    if (v1 == null || v2 == null) return false;
     return v1.id == v2.id;
   }
 
   ngOnInit(
   ) {
     this.prliIdStr = this.route.snapshot.params.id;
-    this.route.params.subscribe(params => 
-                this.prIdStr = params['id']);
-    
+    this.route.params.subscribe(params =>
+      this.prIdStr = params['id']);
+
     this.productService.list().subscribe(
       jresp => {
         this.jr = jresp;
@@ -59,12 +58,6 @@ export class PrliEditComponent implements OnInit {
     });
   }
 
- 
-
-
-
-
-
   edit() {
     // console.log("PRLI:", this.prli);
     this.prliSvc.edit(this.prli)
@@ -77,11 +70,3 @@ export class PrliEditComponent implements OnInit {
         });
   }
 }
-
-
-  
-
-
-
-
-

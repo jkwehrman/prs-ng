@@ -22,7 +22,7 @@ export class UserLoginComponent implements OnInit {
 
   login() {
     this.userSvc.login(this.user)
-      .subscribe(jresp =>  {
+      .subscribe(jresp => {
         console.log(jresp);
         this.jr = jresp;
         if (this.jr.errors == null) {
@@ -36,10 +36,11 @@ export class UserLoginComponent implements OnInit {
         }
       })
   }
+
   ngOnInit() {
     // defaulting uname and pwd for testing purposes
-    this.user.userName = 'j';
-    this.user.password = 'j';
+    // this.user.userName = 'j';
+    // this.user.password = 'j';
   }
 
 }

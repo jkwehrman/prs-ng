@@ -8,23 +8,21 @@ import { ProductService } from '../../../service/product.service';
 import { PrService } from '../../../service/pr.service';
 import { PR } from '../../../model/pr.class';
 
-
-
 @Component({
   selector: 'app-prli-create',
   templateUrl: './prli-create.component.html',
 })
+
 export class PrliCreateComponent implements OnInit {
-    
-    jr: JsonResponse;
-    prli: Prli = new Prli();
-    title: string;
-    products: Product[];
-    prid: number;
-    pr: PR;
+  jr: JsonResponse;
+  prli: Prli = new Prli();
+  title: string;
+  products: Product[];
+  prid: number;
+  pr: PR;
 
   constructor(
-    private prliSvc: PrliService, 
+    private prliSvc: PrliService,
     private prSvc: PrService,
     private router: Router,
     private route: ActivatedRoute,
@@ -40,22 +38,21 @@ export class PrliCreateComponent implements OnInit {
     });
     this.productService.list().subscribe(
       jresp => {
-        this.jr=jresp;
-      this.products = this.jr.data as Product[];
+        this.jr = jresp;
+        this.products = this.jr.data as Product[];
       }
     )
-    }
-    
-    create() {
-      this.prli.purchaseRequest = this.pr;
-      console.log("PRLI:", this.prli);
-      this.prliSvc.create(this.prli)
+  }
+
+  create() {
+    this.prli.purchaseRequest = this.pr;
+    console.log("PRLI:", this.prli);
+    this.prliSvc.create(this.prli)
       .subscribe(
         jresp => {
-          this.jr=jresp;
-        this.router.navigate(['/pr/lines/'+ Number(this.pr.id)]);
+          this.jr = jresp;
+          this.router.navigate(['/pr/lines/' + Number(this.pr.id)]);
         });
-        }
-    
-      }
+  }
 
+}

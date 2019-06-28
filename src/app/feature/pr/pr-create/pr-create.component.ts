@@ -12,38 +12,36 @@ import { SystemService } from '../../../service/system.service';
 })
 
 export class PrCreateComponent implements OnInit {
-  
-    title: string = "PR-Create";
-    jr: JsonResponse;
-    
-    purchaseRequest: PR = new PR();
-    // authenticatedUser: User;
 
-        constructor(
-          private prSvc: PrService, 
-          private sysSvc: SystemService,
-          private router: Router
-         ) { }
-         
+  title: string = "PR-Create";
+  jr: JsonResponse;
+
+  purchaseRequest: PR = new PR();
+
+  constructor(
+    private prSvc: PrService,
+    private sysSvc: SystemService,
+    private router: Router
+  ) { }
+
   ngOnInit() {
     if (this.sysSvc.data.user.loggedIn) {
       this.purchaseRequest.user = this.sysSvc.data.user.instance;
-     } else {
-        console.error("User not logged in.")
-      }
+    } else {
+      console.error("User not logged in.")
     }
-    
-    create() {
-      this.prSvc.create(this.purchaseRequest)
+  }
+
+  create() {
+    this.prSvc.create(this.purchaseRequest)
       .subscribe(
         jresp => {
-          this.jr=jresp;
+          this.jr = jresp;
           console.log(jresp);
-          //assume a good call, fwd to User-List
-        this.router.navigate(['/pr/list']);
+          this.router.navigate(['/pr/list']);
         });
-        }
-    
-      }
+  }
+
+}
 
 

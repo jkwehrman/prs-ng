@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { JsonResponse } from '../../../model/json-response.class';
-import { Product }      from '../../../model/product.class';
+import { Product } from '../../../model/product.class';
 import { ProductService } from '../../../service/product.service';
 import { Router } from '@angular/router';
 import { VendorService } from '../../../service/vendor.service';
-import { Vendor }      from '../../../model/vendor.class';
+import { Vendor } from '../../../model/vendor.class';
 
 @Component({
   selector: 'app-product-create',
@@ -17,14 +17,14 @@ export class ProductCreateComponent implements OnInit {
   product: Product = new Product();
   vendors: Vendor[];
 
-  constructor(private productSvc:ProductService,
-              private vendorSvc:VendorService,
-              private router:Router) { 
-              } 
+  constructor(private productSvc: ProductService,
+    private vendorSvc: VendorService,
+    private router: Router) {
+  }
 
   ngOnInit() {
     console.log("1");
-    this.vendorSvc.list().subscribe( 
+    this.vendorSvc.list().subscribe(
       jresp => {
         console.log("2");
         this.jr = jresp;
@@ -44,5 +44,4 @@ export class ProductCreateComponent implements OnInit {
       }
     )
   }
-
 }

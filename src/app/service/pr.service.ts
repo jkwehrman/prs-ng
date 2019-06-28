@@ -11,7 +11,7 @@ import { User } from '../model/user.class';
 })
 export class PrService {
   url: string = "http://localhost:8080/purchase-requests/";
-  
+
   constructor(private http: HttpClient) { }
 
   list(): Observable<JsonResponse> {
@@ -23,24 +23,30 @@ export class PrService {
   }
 
   create(pr: PR): Observable<JsonResponse> {
-    return this.http.post(this.url + "submit-new", pr) as Observable<JsonResponse>;  
+    return this.http.post(this.url + "submit-new", pr) as Observable<JsonResponse>;
   }
+
   edit(pr: PR): Observable<JsonResponse> {
     return this.http.put(this.url, pr) as Observable<JsonResponse>;
-  } 
+  }
+
   remove(pr: PR): Observable<JsonResponse> {
-    return this.http.delete(this.url+pr.id) as Observable<JsonResponse>;
-  } 
+    return this.http.delete(this.url + pr.id) as Observable<JsonResponse>;
+  }
+
   submitForReview(pr: PR): Observable<JsonResponse> {
     return this.http.put(this.url + "submit-review", pr) as Observable<JsonResponse>;
-  } 
+  }
+
   listReview(user: User): Observable<JsonResponse> {
     return this.http.post(this.url + "list-review", user) as Observable<JsonResponse>;
   }
+
   approve(pr: PR): Observable<JsonResponse> {
-  return this.http.put(this.url + "approve", pr) as Observable<JsonResponse>;
+    return this.http.put(this.url + "approve", pr) as Observable<JsonResponse>;
   }
+  
   reject(pr: PR): Observable<JsonResponse> {
     return this.http.put(this.url + "reject", pr) as Observable<JsonResponse>;
-    }
+  }
 } 

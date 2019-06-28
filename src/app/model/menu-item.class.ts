@@ -4,8 +4,8 @@ export class MenuItem {
   tooltip: string;
 
   constructor(dis: string, hr: string, tt: string) {
-      this.display = dis;
-      this.href = hr;
-      this.tooltip = tt;
+    this.display = dis;
+    this.href = hr;
+    this.tooltip = tt;
   }
 }

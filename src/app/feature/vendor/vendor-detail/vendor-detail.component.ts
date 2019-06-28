@@ -10,32 +10,32 @@ import { Router, ActivatedRoute } from '@angular/router';
   styleUrls: ['./vendor-detail.component.css']
 })
 export class VendorDetailComponent implements OnInit {
-    title: string = "Vendor Detail";
-    vendorIdStr: string;
-    jr: JsonResponse;
-    vendor: Vendor;
+  title: string = "Vendor Detail";
+  vendorIdStr: string;
+  jr: JsonResponse;
+  vendor: Vendor;
 
   constructor(private vendorSvc: VendorService,
     private router: Router,
     private route: ActivatedRoute) { }
 
-    ngOnInit() {
-      this.route.params.subscribe(params => 
-        this.vendorIdStr = params['id']);
-        this.vendorSvc.get(this.vendorIdStr).subscribe(jresp => {
+  ngOnInit() {
+    this.route.params.subscribe(params =>
+      this.vendorIdStr = params['id']);
+    this.vendorSvc.get(this.vendorIdStr).subscribe(jresp => {
+      this.jr = jresp;
+      this.vendor = this.jr.data as Vendor;
+    });
+  }
+
+  remove() {
+    this.vendorSvc.remove(this.vendor).subscribe(
+      jresp => {
         this.jr = jresp;
         this.vendor = this.jr.data as Vendor;
-      });
-    }
-  
-    remove() {
-        this.vendorSvc.remove(this.vendor).subscribe(
-          jresp => {
-            this.jr = jresp;
-            this.vendor = this.jr.data as Vendor;
-            this.router.navigate(['/vendor/list']);
-          }
-      );
-    }
-  
+        this.router.navigate(['/vendor/list']);
+      }
+    );
   }
+
+}

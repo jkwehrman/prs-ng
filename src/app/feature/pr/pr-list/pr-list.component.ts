@@ -12,9 +12,8 @@ import { JsonResponse } from '../../../../app/model/json-response.class';
 export class PRListComponent implements OnInit {
   jr: JsonResponse;
   prs: PR[];
-  title:string = "PR-List"; 
-  // sortCriteria: string = "id";
-  // sortOrder: string = "asc";
+  title: string = "PR-List";
+
 
   constructor(private prSvc: PrService) { }
 
@@ -26,16 +25,6 @@ export class PRListComponent implements OnInit {
       }
     );
 
-      }
-    
-      // sortBy(column: string): void {
-      //   if(this.sortCriteria === column) {
-      //     this.sortOrder = this.sortOrder === 'asc' ? 'desc' : 'asc';
-      //   } else {
-      //     this.sortCriteria = column;
-      //     this.sortOrder = 'asc';
-      //   }
-      // }
-    
+  }
 
-    }
+}

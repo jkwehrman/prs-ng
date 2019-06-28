@@ -10,27 +10,25 @@ import { Router } from '@angular/router';
   styleUrls: ['./vendor-create.component.css']
 })
 export class VendorCreateComponent implements OnInit {
-    jr: JsonResponse;
-    vendor: Vendor = new Vendor();
-    title:string; 
+  jr: JsonResponse;
+  vendor: Vendor = new Vendor();
+  title: string;
 
-    create() {
-      this.vendorSvc.create(this.vendor)
+  create() {
+    this.vendorSvc.create(this.vendor)
       .subscribe(
         jresp => {
-          this.jr=jresp;
+          this.jr = jresp;
           //assume a good call, fwd to User-List
-        this.router.navigate(['/vendor/list']);
+          this.router.navigate(['/vendor/list']);
         });
-        }
-
-    constructor(
-      private vendorSvc: VendorService,
-      private router: Router
-      ) { }
-    
-  
-    ngOnInit() {
-    }
-
   }
+
+  constructor(
+    private vendorSvc: VendorService,
+    private router: Router
+  ) { }
+
+  ngOnInit() {
+  }
+}

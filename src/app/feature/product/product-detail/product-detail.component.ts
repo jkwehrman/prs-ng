@@ -15,31 +15,30 @@ export class ProductDetailComponent implements OnInit {
   productIdStr: string;
   jr: JsonResponse;
   product: Product;
-  
+
   constructor(private productSvc: ProductService,
     private router: Router,
     private route: ActivatedRoute) { }
 
-    ngOnInit() {
-      this.route.params.subscribe(params => 
-        this.productIdStr = params['id']);
-        this.productSvc.get(this.productIdStr).subscribe(jresp => {
-        this.jr = jresp;
-        this.product = this.jr.data as Product;
-      });
-    }
-
-    remove() {
-        this.productSvc.remove(this.product).subscribe(
-          jresp => {
-            this.jr = jresp;
-            console.log("AAAAA");
-            this.product = this.jr.data as Product;
-            this.router.navigate(['/product/list']);
-
-          }
-      );
-    }
-  
+  ngOnInit() {
+    this.route.params.subscribe(params =>
+      this.productIdStr = params['id']);
+    this.productSvc.get(this.productIdStr).subscribe(jresp => {
+      this.jr = jresp;
+      this.product = this.jr.data as Product;
+    });
   }
-  
+
+  remove() {
+    this.productSvc.remove(this.product).subscribe(
+      jresp => {
+        this.jr = jresp;
+        console.log("AAAAA");
+        this.product = this.jr.data as Product;
+        this.router.navigate(['/product/list']);
+
+      }
+    );
+  }
+
+}

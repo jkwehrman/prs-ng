@@ -10,25 +10,24 @@ import { Router, ActivatedRoute } from '@angular/router';
   styleUrls: ['./vendor-edit.component.css']
 })
 export class VendorEditComponent implements OnInit {
-    title: string = "Vendor Edit";
-    vendorIdStr: string;
-    jr: JsonResponse;
-    vendor: Vendor;
+  title: string = "Vendor Edit";
+  vendorIdStr: string;
+  jr: JsonResponse;
+  vendor: Vendor;
 
- constructor(private vendorSvc: VendorService,
-  private router: Router,
-  private route: ActivatedRoute) { }
+  constructor(private vendorSvc: VendorService,
+    private router: Router,
+    private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.route.params.subscribe(params => 
-            this.vendorIdStr = params['id']);
+    this.route.params.subscribe(params =>
+      this.vendorIdStr = params['id']);
     this.vendorSvc.get(this.vendorIdStr).subscribe(jresp => {
       this.jr = jresp;
       this.vendor = this.jr.data as Vendor;
     });
-    
   }
-    
+
   edit() {
     this.vendorSvc.edit(this.vendor).subscribe(
       jresp => {
@@ -38,5 +37,4 @@ export class VendorEditComponent implements OnInit {
       }
     );
   }
-
 }
